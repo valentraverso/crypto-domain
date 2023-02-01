@@ -8,3 +8,8 @@ include_once './src/templates/navbar.php';
 
 // Actual view
 include_once './src/templates/index.php';
+
+// Footer
+include_once './src/templates/footer.html';
+
+
