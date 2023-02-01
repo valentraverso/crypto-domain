@@ -19,4 +19,5 @@
         }
       </script>
     <title><?php echo $pageTitle; ?></title>
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
 </head>
