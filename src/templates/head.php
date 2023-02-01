@@ -5,4 +5,5 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./src/js/navbar.js"></script>
     <title><?php echo $pageTitle; ?></title>
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
 </head>
