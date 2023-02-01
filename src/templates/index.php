@@ -8,7 +8,7 @@
             </div>
             <div>
               <div class="mt-10">
-                <a href="#" class="inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Create Account</a>
+                <a href="#" class="inline-block rounded-md border border-transparent bg-yellow py-3 px-8 text-center text-gray font-medium hover:bg-maroon hover:text-white">Create Account</a>
               </div>
             </div>
           </div>
