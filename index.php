@@ -1,9 +1,12 @@
 <?php
 // Head
-include_once './templates/head.php';
+include_once './src/templates/head.php';
+
+//Navbar
+include_once './src/templates/navbar.php';
 
 // Actual view
-include_once './templates/index.php';
+include_once './src/templates/index.php';
 
 $url = "https://bitpay.com/api/rates";
 $json = json_decode(file_get_contents($url));
