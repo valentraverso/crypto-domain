@@ -1,6 +1,4 @@
-
-<body class="bg-blue-500">
-	<nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+<nav class="relative px-4 py-4 flex justify-between items-center bg-white">
 		<a class="text-3xl font-bold leading-none" href="#">
             <img width="50px"src="./img/logo.png">
 		</a>
@@ -59,4 +57,4 @@
 			</div>
 		</nav>
 	</div>
-</body>
+
