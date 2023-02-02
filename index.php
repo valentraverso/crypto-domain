@@ -11,5 +11,3 @@ include_once './src/templates/index.php';
 
 // Footer
 include_once './src/templates/footer.html';
-
-
