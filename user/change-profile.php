@@ -12,4 +12,3 @@ include_once '../src/templates/profileEditUser.php';
 // Footer
 include_once '../src/templates/footer.html';
 
-
