@@ -27,6 +27,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `coins`
 --
 
+CREATE DATABASE `cryptodomaindb`;
+use `cryptodomaindb`;
+
 CREATE TABLE `coins` (
   `id_coin` int(11) NOT NULL,
   `coin_name` varchar(20) NOT NULL,
