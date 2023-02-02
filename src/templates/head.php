@@ -26,7 +26,7 @@ define ('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/PHP-final/develop-your-project-
             }
           }
         }
-      </script>
+    </script>
     <title><?php echo $pageTitle; ?></title>
     <link rel="icon" type="image/x-icon" href="<?php echo BASE_URL; ?>/img/logo.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
