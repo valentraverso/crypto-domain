@@ -12,7 +12,7 @@
                 yellow: '#F9ED69', 
                 orange: '#F08A5D',
                 maroon: '#B83B5E',
-                purple: '#6A2C70E',
+                purple: '#6A2C70',
               }
             }
           }
