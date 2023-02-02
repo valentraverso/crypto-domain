@@ -7,7 +7,7 @@ include_once '../src/templates/head.php';
 include_once '../src/templates/navbar.php';
 
 // Actual view
-include_once '../src/templates/profileEdit.php';
+include_once '../src/templates/profileEditUser.php';
 
 // Footer
 include_once '../src/templates/footer.html';
