@@ -1,10 +1,11 @@
 <?php
 
 class Coins{
-    private $access_key = '36c48c1dc62cae4ef868c4edccc7de33';
+    private $accessKey = '36c48c1dc62cae4ef868c4edccc7de33';
+    private $targetCoin = 'EUR';
   
     public function setCoin(){
-        $initCurl = curl_init('http://api.coinlayer.com/live?access_key='.$this->access_key);
+        $initCurl = curl_init('http://api.coinlayer.com/live?access_key='.$this->accessKey);
 
         curl_setopt($initCurl, CURLOPT_RETURNTRANSFER, true);
 
