@@ -1,17 +1,14 @@
-<?php
-
-// Index when user is logged in 
-// include_once './src/templates/index-logged.php';
-
+<?php 
 // Head
 $pageTitle = 'The best web to buy cripto';
 include_once './src/templates/head.php';
 
-//Navbar
-include_once './src/templates/navbar.php';
+// Navbar
+include_once './src/templates/navbarLoggedUser.php';
 
-// Actual view
+// Actual View
 include_once './src/templates/index.php';
 
 // Footer
 include_once './src/templates/footer.html';
+?>

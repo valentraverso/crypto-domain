@@ -1,9 +1,18 @@
+<?php
+/* Main URL of your project  --- Change After This👇 */
+define ('BASE_URL', 'http://'.$_SERVER['HTTP_HOST'].'/assembler/develop-your-project-in-php');
+
+/* Main Path of project --- Change After This👇 */
+define ('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/assembler/develop-your-project-in-php');
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./src/js/navbar.js"></script>
+    <script defer src="<?php echo BASE_URL ;?>/src/js/navbar.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script>
         tailwind.config = {
           theme: {
@@ -19,5 +28,6 @@
         }
       </script>
     <title><?php echo $pageTitle; ?></title>
-    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+    <link rel="icon" type="image/x-icon" href="<?php echo BASE_URL; ?>/img/logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
 </head>
