@@ -1,6 +1,4 @@
 
-<!-- For body -->
-
 <div class="h-screen bg-gray-100 pt-20 grid">
     <h1 class="mb-10 text-center text-2xl font-bold">Buy criptos</h1>
 
@@ -17,7 +15,7 @@
 <div class="w-80 max-w-2xl mx-auto">
 
 	<label for="coins" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an option</label>
-        <select id="coins" class="bg-yellow border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-maroon dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
+        <select id="coins" class="bg-yellow border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-purple dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
         <option selected>Choose your coin</option>
         <option value="BTC">Bitcoin</option>
         <option value="ETH">Ethereum</option>

@@ -1,14 +1,15 @@
-<?php 
+<?php
 // Head
 $pageTitle = 'The best web to buy cripto';
 include_once '../src/templates/head.php';
 
-// Navbar
-include_once '../src/templates/navbarLoggedUser.php';
+//Navbar
+include_once '../src/templates/navbar.php';
 
-// Actual View
-include_once '../src/templates/index.php';
+// Actual view
+include_once '../src/templates/sell.php';
 
 // Footer
 include_once '../src/templates/footer.html';
+
 ?>
