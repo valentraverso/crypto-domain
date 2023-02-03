@@ -28,7 +28,7 @@
 								<a href="#" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Dashboard</a>
 							</li>
 							<li>
-								<a href="#" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Settings</a>
+								<a href="<?php echo BASE_URL . '/user/change-profile.php';?>" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Settings</a>
 							</li>
 							<li>
 								<a href="<?php echo BASE_URL . '/src/funcs/logOutUser.php';?>" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Log Out</a>

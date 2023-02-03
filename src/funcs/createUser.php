@@ -4,8 +4,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once('../controllers/UserController.php');
-require_once('../controllers/WalletController.php');
+require_once('../controllers/pathControllers.php');
+require_once(BASE_PATH.'/src/controllers/UserController.php');
+require_once(BASE_PATH.'/src/controllers/WalletController.php');
 
 $user = new Users();
 $idUser = $user->readUserData("ORDER BY id_user DESC");

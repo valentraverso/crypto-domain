@@ -1,6 +1,19 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include BASE_PATH.'/src/templates/components/head.php';
 include BASE_PATH.'/src/templates/components/navbar.php';
+
+require_once '../src/controllers/UserController.php';
+
+$user = new Users();
+$email = $_SESSION['email'];
+$userData = $user->readUserData("WHERE email='$email'");
+
+print_r($userData);
+
 ?>
 <div class="flex items-center justify-center p-12">
   <div class="mx-auto w-full max-w-[550px]">
@@ -21,6 +34,7 @@ include BASE_PATH.'/src/templates/components/navbar.php';
           name="first-name"
           id="firstName"
           placeholder="First Name"
+          value=""
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
