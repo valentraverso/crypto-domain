@@ -1,14 +1,7 @@
 <?php
-// Head
-$pageTitle = 'The best web to buy cripto';
-include_once '../src/templates/head.php';
+require_once '../src/controllers/pathControllers.php';
 
-// Navbar
-include_once '../src/templates/navbar.php';
+$pageTitle = 'Edit your profile - Crypto Domain';
 
 // Actual view
-include_once '../src/templates/profileEditUser.php';
-
-// Footer
-include_once '../src/templates/footer.html';
-
+include_once BASE_PATH.'/src/templates/user/profileEditUser.php';

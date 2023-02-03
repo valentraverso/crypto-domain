@@ -11,14 +11,14 @@
 			</button>
 		</div>
 		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-			<li><a class="text-sm text-gray-400 hover:text-maroon" href="#">Home</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL; ?>">Home</a></li>
 			
-			<li><a class="text-sm text-maroon font-bold" href="#">Buy</a></li>
+			<li><a class="text-sm text-maroon font-bold" href="<?php echo BASE_URL.'/user/buy-coins.php'; ?>">Buy</a></li>
 			
-			<li><a class="text-sm text-gray-400 hover:text-maroon" href="#">Sell</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL.'/user/sell-coins.php'; ?>">Sell</a></li>
 		</ul>
-		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-yellow text-sm text-maroon font-bold  rounded-xl transition duration-200" href="#">Sign In</a>
-		<a class="hidden lg:inline-block py-2 px-6 bg-yellow hover:bg-maroon hover:text-white text-sm text-maroon font-bold rounded-xl transition duration-200" href="#">Sign up</a>
+		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-yellow text-sm text-maroon font-bold  rounded-xl transition duration-200" href="<?php echo BASE_URL.'/user/login.php'; ?>">Sign In</a>
+		<a class="hidden lg:inline-block py-2 px-6 bg-yellow hover:bg-maroon hover:text-white text-sm text-maroon font-bold rounded-xl transition duration-200" href="<?php echo BASE_URL.'/user/sign-up.php'; ?>">Sign up</a>
 	</nav>
 	<div class="navbar-menu relative z-50 hidden">
 		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
@@ -36,20 +36,20 @@
 			<div>
 				<ul>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="#">Home</a>
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL; ?>">Home</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="#">Buy</a>
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL.'/user/buy-coins.php'; ?>">Buy</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="#">Sell</a>
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL.'/user/sell-coins.php'; ?>">Sell</a>
 					</li>
 				</ul>
 			</div>
 			<div class="mt-auto">
 				<div class="pt-6">
-					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-white hover:bg-maroon hover:text-white rounded-xl" href="#">Sign in</a>
-					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-maroon font-semibold bg-yellow hover:bg-maroon hover:text-white rounded-xl" href="#">Sign Up</a>
+					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-white hover:bg-maroon hover:text-white rounded-xl" href="<?php echo BASE_URL.'/user/login.php'; ?>">Sign in</a>
+					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-maroon font-semibold bg-yellow hover:bg-maroon hover:text-white rounded-xl" href="<?php echo BASE_URL.'/user/sign-up.php'; ?>">Sign Up</a>
 				</div>
 				<p class="my-4 text-xs text-center text-gray-400">
 					<span>Copyright © 2023</span>

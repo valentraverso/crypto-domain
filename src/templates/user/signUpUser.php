@@ -1,11 +1,6 @@
 <?php
-$pageTitle = "Sign Up Crypto Domain";
-require_once("head.php");
-
-require_once("navbarLogin.php");
-
-
-
+include BASE_PATH.'/src/templates/components/head.php';
+include BASE_PATH.'/src/templates/components/navbar.php';
 ?>
 
 <div class="flex  items-center justify-center  px-4 sm:px-6 lg:px-8">
@@ -14,7 +9,7 @@ require_once("navbarLogin.php");
       <h2 class="mt-6 text-center text-2xlgit add tracking-tight text-gray-900 font-bold text-3xl">Join us!</h2>
       <p class="text-xl">Create a free Cypto Domain Account</p>
     </div>
-    <form class="" action="#" method="POST m-0">
+    <form class="" action="<?php echo BASE_URL.'/src/funcs/createUser.php'; ?>" method="POST">
       <div class="-space-y-px rounded-md px-6 space-y-4 md:space-y-6 ">
           <div>
               <label for="firstName" class="sr-only">First Name</label>

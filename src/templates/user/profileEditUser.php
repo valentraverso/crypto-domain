@@ -1,3 +1,7 @@
+<?php
+include BASE_PATH.'/src/templates/components/head.php';
+include BASE_PATH.'/src/templates/components/navbar.php';
+?>
 <div class="flex items-center justify-center p-12">
   <div class="mx-auto w-full max-w-[550px]">
     <form action="https://formbold.com/s/FORM_ID" method="POST">
@@ -79,3 +83,6 @@
     </form>
   </div>
 </div>
+<?php
+    include_once BASE_PATH.'/src/templates/components/footer.html';
+?>

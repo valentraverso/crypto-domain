@@ -1,13 +1,7 @@
 <?php
-$pageTitle = "Log in Crypto Domain";
-require_once("head.php");
-
-require_once("navbarLogin.php");
-
-
+include BASE_PATH.'/src/templates/components/head.php';
+include BASE_PATH.'/src/templates/components/navbar.php';
 ?>
-
-
 <div class="flex  items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
   <div class="w-full max-w-md space-y-8">
     <div>
@@ -27,15 +21,15 @@ require_once("navbarLogin.php");
       </div>
       <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
       <button class="group relative flex w-full justify-center rounded-md border border-transparent bg-yellow py-2 px-4 text-sm font-medium text-black hover:bg-purple focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-        <img src="../../img/google.png" alt="Logo Google" width="20px">  
+        <img src="<?php echo BASE_URL; ?>/img/google.png" alt="Logo Google" width="20px">  
         Continuar con Google
       </button>
       <button class="group relative flex w-full justify-center rounded-md border border-transparent bg-yellow py-2 px-4 text-sm font-medium text-black hover:bg-purple focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-      <img src="../../img/apple.png" alt="Logo Google" width="20px">
+      <img src="<?php echo BASE_URL; ?>/img/apple.png" alt="Logo Google" width="20px">
         Continuar con Apple
       </button>
       <div class="flex items-center space-x-4">
-        <a href="signUp.php" class="transition duration-200 group relative flex w-full justify-center rounded-md border border-transparent bg-maroon py-2 px-4 text-sm font-medium text-white hover:bg-purple focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+        <a href="sign-up.php" class="transition duration-200 group relative flex w-full justify-center rounded-md border border-transparent bg-maroon py-2 px-4 text-sm font-medium text-white hover:bg-purple focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
           <!-- <button> -->
                 Sign Up
           <!-- </button> -->
