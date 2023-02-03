@@ -31,7 +31,7 @@
 								<a href="#" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Settings</a>
 							</li>
 							<li>
-								<a href="#" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Sign Out</a>
+								<a href="<?php echo BASE_URL . '/src/funcs/logOutUser.php';?>" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Log Out</a>
 							</li>
 						</ul>
         			</div>
@@ -72,7 +72,7 @@
 			<div class="mt-auto">
 				<div class="pt-6">
 					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-white hover:bg-maroon hover:text-white rounded-xl mobile-navbar__button--settings" href="#">Settings</a>
-					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-maroon font-semibold bg-yellow hover:bg-maroon hover:text-white rounded-xl mobile-navbar__button--logout" href="#">Log Out</a>
+					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-maroon font-semibold bg-yellow hover:bg-maroon hover:text-white rounded-xl mobile-navbar__button--logout" href="<?php echo BASE_URL . '/src/funcs/logOutUser.php';?>">Log Out</a>
 				</div>
 				<p class="my-4 text-xs text-center text-gray-400">
 					<span>Copyright © 2023</span>

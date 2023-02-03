@@ -17,7 +17,7 @@
 			
 			<li><a class="text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL.'/user/sell-coins.php'; ?>">Sell</a></li>
 		</ul>
-		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-yellow text-sm text-maroon font-bold  rounded-xl transition duration-200" href="<?php echo BASE_URL.'/user/login.php'; ?>">Sign In</a>
+		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-yellow text-sm text-maroon font-bold  rounded-xl transition duration-200" href="<?php echo BASE_URL.'/user/login.php'; ?>">Log In</a>
 		<a class="hidden lg:inline-block py-2 px-6 bg-yellow hover:bg-maroon hover:text-white text-sm text-maroon font-bold rounded-xl transition duration-200" href="<?php echo BASE_URL.'/user/sign-up.php'; ?>">Sign up</a>
 	</nav>
 	<div class="navbar-menu relative z-50 hidden">
@@ -48,7 +48,7 @@
 			</div>
 			<div class="mt-auto">
 				<div class="pt-6">
-					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-white hover:bg-maroon hover:text-white rounded-xl" href="<?php echo BASE_URL.'/user/login.php'; ?>">Sign in</a>
+					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-white hover:bg-maroon hover:text-white rounded-xl" href="<?php echo BASE_URL.'/user/login.php'; ?>">Log in</a>
 					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-maroon font-semibold bg-yellow hover:bg-maroon hover:text-white rounded-xl" href="<?php echo BASE_URL.'/user/sign-up.php'; ?>">Sign Up</a>
 				</div>
 				<p class="my-4 text-xs text-center text-gray-400">

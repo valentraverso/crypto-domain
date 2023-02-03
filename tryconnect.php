@@ -1,10 +1,10 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
- $base = new PDO('mysql:host=localhost; dbname=cryptodomaindb', 'root', '');
+//  $base = new PDO('mysql:host=localhost; dbname=cryptodomaindb', 'root', '');
 
 // $sql = "SELECT id_user, id_wallet, email FROM users WHERE first_name = ?";
 
@@ -34,22 +34,22 @@ error_reporting(E_ALL);
 // $role = $_POST["role"];
 
 
-$idUser = null;
-$idWallet = 4;
-$email = "pepito@gmail.com";
-$pass = "123456";
-$firstName = "Pepito";
-$lastName = "Zafra";
-$birthday = "1980-02-02";
-$favCoin = 3;
-$avatar = "asdfasdfawfsfasdad";
-$status = 2;
-$role = 0;
+// $idUser = null;
+// $idWallet = 4;
+// $email = "pepito@gmail.com";
+// $pass = "123456";
+// $firstName = "Pepito";
+// $lastName = "Zafra";
+// $birthday = "1980-02-02";
+// $favCoin = 3;
+// $avatar = "asdfasdfawfsfasdad";
+// $status = 2;
+// $role = 0;
 
-$sql = "INSERT INTO users (id_user, id_wallet, email, password, first_name, last_name, birth_date, fav_coin, avatar, status, role) VALUES (:user, :wallet, :email, :password, :first, :last, :birth, :coin, :avatar, :status, :role)";
-$resultado = $base->prepare($sql);
+// $sql = "INSERT INTO users (id_user, id_wallet, email, password, first_name, last_name, birth_date, fav_coin, avatar, status, role) VALUES (:user, :wallet, :email, :password, :first, :last, :birth, :coin, :avatar, :status, :role)";
+// $resultado = $base->prepare($sql);
 
-$resultado->execute(array(":user"=>$idUser, ":wallet"=>$idWallet, ":email"=>$email, ":password"=>$pass, ":first"=>$firstName, ":last"=>$lastName, ":birth"=>$birthday, ":coin"=>$favCoin, ":avatar"=>$avatar, ":status"=>$status, ":role"=>$role));
+// $resultado->execute(array(":user"=>$idUser, ":wallet"=>$idWallet, ":email"=>$email, ":password"=>$pass, ":first"=>$firstName, ":last"=>$lastName, ":birth"=>$birthday, ":coin"=>$favCoin, ":avatar"=>$avatar, ":status"=>$status, ":role"=>$role));
 
-echo "Registro insertado!"
-?>
+// echo "Registro insertado!"
+// ?>

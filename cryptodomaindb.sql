@@ -63,11 +63,11 @@ CREATE TABLE `users` (
   `id_user` int(4) NOT NULL,
   `id_wallet` int(4) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(20) NOT NULL,
   `birth_date` date NOT NULL,
-  `fav_coin` int(4) NOT NULL,
+  `fav_coin` varchar(4) NOT NULL,
   `avatar` char(100) NOT NULL,
   `status` int(1) NOT NULL,
   `role` int(1) NOT NULL
