@@ -4,18 +4,18 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include BASE_PATH.'/src/templates/components/head.php';
-include BASE_PATH.'/src/templates/components/navbar.php';
+include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 
 require_once '../src/controllers/UserController.php';
 
 $user = new Users();
-$email = $_SESSION['email'];
-$userData = $user->readUserData("WHERE email='$email'");
+$idUser = $_SESSION['id_user'];
+$userData = $user->readUserData("WHERE id_user='$idUser'");
 
 ?>
 <div class="flex items-center justify-center p-12">
   <div class="mx-auto w-full max-w-[550px]">
-    <form action="https://formbold.com/s/FORM_ID" method="POST">
+    <form action="<?php echo BASE_URL . '/src/funcs/updateUser.php';?>" method="POST">
         <div class="flex space-y-5 flex-col items-center py-7">
             <img class="h-28 w-28 rounded-full" src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe"
                 alt="User">

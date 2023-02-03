@@ -27,7 +27,7 @@ $wallet->createWallet($idWallet);
 $user->createUser($idWallet, $email, $password, $firstName, $lastName, $birthDate, $favCoin, $status, $role);
 
 session_start();
-$_SESSION['email'] = $email;
+$_SESSION['id_user'] = $idWallet;
 header("location: ../../index.php");
 
 

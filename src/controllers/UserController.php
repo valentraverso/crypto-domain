@@ -32,8 +32,15 @@ class Users extends Connection{
     }
 
     // Update
-    public function updateUserData(){
+    public function updateUserData($idUser, $firstName, $lastName){
 
+        $updateSqlQuery = $this->con->prepare("UPDATE users
+        SET first_name=:firstName, last_name=:lastName
+        WHERE id_user=:idUser");
+        $updateSqlQuery->bindParam(':firstName', $firstName);
+        $updateSqlQuery->bindParam(':lastName', $lastName);
+        $updateSqlQuery->bindParam(':idUser', $idUser);
+        $updateSqlQuery->execute();
 
     }
     

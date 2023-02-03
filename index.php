@@ -9,7 +9,7 @@ $pageTitle = 'The best web to buy cripto';
 // Actual view
 session_start();
 // echo $_SESSION['email'];
-if(isset($_SESSION['email'])){
+if(isset($_SESSION['id_user'])){
 
     include_once BASE_PATH . '/src/templates/user/index-logged.php';
 
