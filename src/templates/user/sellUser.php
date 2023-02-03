@@ -1,4 +1,7 @@
-
+<?php
+include BASE_PATH.'/src/templates/components/head.php';
+include BASE_PATH.'/src/templates/components/navbar.php';
+?>
 <div class="h-screen bg-gray-100 pt-20 grid">
     <h1 class="mb-10 text-center text-2xl font-bold">Sell criptos</h1>
 
@@ -57,7 +60,6 @@
       </div>
     </div>
   </div>
-
-
-
-
+  <?php
+    include_once BASE_PATH.'/src/templates/components/footer.html';
+?>

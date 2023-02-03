@@ -1,17 +1,9 @@
 <?php
-
+require_once './src/controllers/pathControllers.php';
 // Index when user is logged in 
 // include_once './src/templates/index-logged.php';
 
-// Head
 $pageTitle = 'The best web to buy cripto';
-include_once './src/templates/head.php';
-
-//Navbar
-include_once './src/templates/navbar.php';
 
 // Actual view
-include_once './src/templates/index.php';
-
-// Footer
-include_once './src/templates/footer.html';
+include_once BASE_PATH.'/src/templates/index.php';
