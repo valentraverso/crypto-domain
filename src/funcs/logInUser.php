@@ -1,9 +1,4 @@
 <?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once('../controllers/UserController.php');
 
 $email = $_POST['email'];
@@ -19,5 +14,4 @@ if ($userMatched){
 }else{
     header('Location: ../../user/login.php?msg=error');
 }
-
 ?>
