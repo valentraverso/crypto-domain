@@ -1,5 +1,7 @@
 <?php
 
+// CRUD
+
 require_once '../controllers/DbConnection.php';
 
 class Users extends Connection{
@@ -31,6 +33,8 @@ class Users extends Connection{
         $result = $sqlQuery->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    
 }
 
 ?>

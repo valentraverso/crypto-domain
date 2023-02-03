@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once('../controllers/UserController.php');
+require_once('../controllers/WalletController.php');
 
 $user = new Users();
 $idUser = $user->readUserData("ORDER BY id_user DESC");
@@ -16,8 +17,10 @@ $firstName = $_POST['first-Name'];
 $lastName = $_POST['last-Name'];
 $birthDate = $_POST['birth-Date'];
 $favCoin = $_POST['favorite-coin'];
-$status = 1; //0 desactivado 1 active
+$status = 1; //0 not active 1 active
 $role = 0; //0 user 1 admin
 
+$wallet = new Wallet();
+$wallet->createWallet($idWallet);
 
 $user->createUser($idWallet, $email, $password, $firstName, $lastName, $birthDate, $favCoin, $status, $role);
