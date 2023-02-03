@@ -24,3 +24,11 @@ $wallet = new Wallet();
 $wallet->createWallet($idWallet);
 
 $user->createUser($idWallet, $email, $password, $firstName, $lastName, $birthDate, $favCoin, $status, $role);
+
+session_start();
+$_SESSION['email'] = $email;
+header("location: ../../index.php");
+
+
+
+?>
