@@ -15,6 +15,7 @@
                 maroon: '#B83B5E',
                 purple: '#6A2C70',
                 grey: '#FCFCFC',
+                red: '#ff0000',
               }
             }
           }

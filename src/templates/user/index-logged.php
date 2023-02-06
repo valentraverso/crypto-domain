@@ -10,7 +10,7 @@ require_once BASE_PATH.'/src/controllers/UserController.php';
 
 $user = new Users();
 
-$userInfo = $user->readUserData('WHERE id_user = '.$_SESSION['id_user'].'');
+$userInfo = $user->readUserData("WHERE id_user = '0'");
 ?>
 <div class="relative overflow-hidden bg-center" style="background-image: url('<?php echo BASE_URL?>/img/crypto-background-index.webp')">
         <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
