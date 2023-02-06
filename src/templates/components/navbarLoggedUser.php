@@ -11,11 +11,11 @@
 			</button>
 		</div>
 		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-			<li><a class="text-sm text-gray-400 hover:text-maroon" href="#">Home</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL; ?>">Home</a></li>
 			
-			<li><a class="text-sm text-maroon font-bold" href="#">Buy</a></li>
+			<li><a class="text-sm text-maroon font-bold" href="<?php echo BASE_URL.'/user/buy-coins.php'; ?>">Buy</a></li>
 			
-			<li><a class="text-sm text-gray-400 hover:text-maroon" href="#">Sell</a></li>
+			<li><a class="text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL.'/user/sell-coins.php'; ?>">Sell</a></li>
 		</ul>
 		<div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
       		<ul class="flex flex-col p-4 mt-4 rounded">
@@ -25,7 +25,7 @@
 					<div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
 						<ul class="py-2 text-sm text-gray-700 bg-yellow transition duration-200" aria-labelledby="dropdownLargeButton">
 							<li>
-								<a href="#" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Dashboard</a>
+								<a href="<?php echo BASE_URL.'/user/wallet-user.php'; ?>" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Dashboard</a>
 							</li>
 							<li>
 								<a href="<?php echo BASE_URL . '/user/change-profile.php';?>" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Settings</a>
@@ -56,22 +56,22 @@
 			<div>
 				<ul>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="#">Home</a>
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL; ?>">Home</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="#">Buy</a>
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL.'/user/buy-coins.php'; ?>">Buy</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="#">Sell</a>
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL.'/user/sell-coins.php'; ?>">Sell</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="#">Dashboard</a>
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL.'/user/wallet-user.php'; ?>">Dashboard</a>
 					</li>
 				</ul>
 			</div>
 			<div class="mt-auto">
 				<div class="pt-6">
-					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-white hover:bg-maroon hover:text-white rounded-xl mobile-navbar__button--settings" href="#">Settings</a>
+					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-white hover:bg-maroon hover:text-white rounded-xl mobile-navbar__button--settings" href="<?php echo BASE_URL.'/user/change-profile.php'; ?>">Settings</a>
 					<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-maroon font-semibold bg-yellow hover:bg-maroon hover:text-white rounded-xl mobile-navbar__button--logout" href="<?php echo BASE_URL . '/src/funcs/logOutUser.php';?>">Log Out</a>
 				</div>
 				<p class="my-4 text-xs text-center text-gray-400">
