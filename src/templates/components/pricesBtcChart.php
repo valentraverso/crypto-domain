@@ -28,8 +28,6 @@ $arrayCoins = $showCoin->setCoin("BTC,LUN,ETH", "EUR");
                     </thead>
                     <tbody>
 <?php
-echo '<pre>';
- print_r($arrayCoins);
 foreach($arrayCoins['DISPLAY'] as $key => $value){
  
   echo '<tr class="bg-white border-b">
