@@ -6,7 +6,7 @@ class Coins{
     
   
     public function setCoin($nameCripto, $fiat){
-        $initCurl = curl_init('https://min-api.cryptocompare.com/data/pricemulti?fsyms='. $nameCripto.'&tsyms='.$fiat.'&api_key='.$this->accessKey);
+        $initCurl = curl_init('https://min-api.cryptocompare.com/data/pricemultifull?fsyms='. $nameCripto.'&tsyms='.$fiat.'&api_key='.$this->accessKey);
 
         curl_setopt($initCurl, CURLOPT_RETURNTRANSFER, true);
 
