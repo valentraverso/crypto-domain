@@ -13,6 +13,15 @@ class Wallet extends Connection {
 
     }
 
+      // DELETE
+      public function deleteWallet($idWallet){
+
+        $deleteSqlQuery = $this->con->prepare("DELETE FROM wallet WHERE id_wallet=:idWallet");
+        $deleteSqlQuery->bindParam(':idWallet', $idWallet);
+        $deleteSqlQuery->execute();
+      
+    }
+
 
 
 

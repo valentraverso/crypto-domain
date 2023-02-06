@@ -43,6 +43,26 @@ class Users extends Connection{
         $updateSqlQuery->execute();
 
     }
+
+      // DELETE
+      public function deleteUser($idUser){
+
+        $deleteSqlQuery = $this->con->prepare("DELETE FROM users WHERE id_user=:idUser");
+        $deleteSqlQuery->bindParam(':idUser', $idUser);
+        $deleteSqlQuery->execute();
+
+    }
+
+
+    //Disactivate
+
+    public function disactivateUser($idUser){
+
+        $disactivateUser = $this->con->prepare("UPDATE users SET status = 0 WHERE id_user=:idUser");
+        $disactivateUser->bindParam(':idUser', $idUser);
+        $disactivateUser->execute();
+    }
+
     
 }
 
