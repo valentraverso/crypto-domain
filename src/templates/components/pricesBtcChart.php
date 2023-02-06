@@ -1,3 +1,11 @@
+<?php 
+require_once BASE_PATH . "/src/apiCoin.php";
+
+$showCoin = new Coins();
+$arrayCoins = $showCoin->setCoin("BTC,LUN,ETH", "EUR");
+
+?>
+
 <section>
         <h2 class='font pl-5 text-2xl font-bold'>Prices</h2>
         <div class="flex flex-col">
@@ -19,28 +27,26 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="bg-white border-b">
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          BTC
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          21,000
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          -5%
-                        </td>
-                      </tr>
-                      <tr class="bg-white border-b">
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          ETH
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          10,000
-                        </td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          -10%
-                        </td>
-                      </tr>
+<?php
+
+foreach($arrayCoins as $key => $value){
+  echo '<tr class="bg-white border-b">
+  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">'
+    . $key .
+  '</td>
+  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">'
+  . $value['EUR'] .
+  '</td>
+  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+    -5%
+  </td>
+</tr>'
+
+
+;
+  }
+?>
+
                     </tbody>
                   </table>
                 </div>
