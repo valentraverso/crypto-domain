@@ -2,7 +2,7 @@
 require_once BASE_PATH . "/src/apiCoin.php";
 
 $showCoin = new Coins();
-$arrayCoins = $showCoin->setCoin("BTC,LUN,ETH", "EUR");
+$arrayCoins = $showCoin->setCoin("BTC,ETH,LUN,DOGE", "EUR");
 
 ?>
 
@@ -28,10 +28,7 @@ $arrayCoins = $showCoin->setCoin("BTC,LUN,ETH", "EUR");
                     </thead>
                     <tbody>
 <?php
-echo '<pre>';
- print_r($arrayCoins);
 foreach($arrayCoins['DISPLAY'] as $key => $value){
- 
   echo '<tr class="bg-white border-b">
   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">'
     . $key .
@@ -42,10 +39,8 @@ foreach($arrayCoins['DISPLAY'] as $key => $value){
   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">'
   . $value['EUR']['CHANGEPCT24HOUR'] .
   '</td>
-</tr>';
-  }
+</tr>';}
 ?>
-
                     </tbody>
                   </table>
                 </div>
