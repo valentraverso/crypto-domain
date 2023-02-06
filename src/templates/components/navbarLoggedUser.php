@@ -1,5 +1,5 @@
 <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
-		<a class="text-3xl font-bold leading-none text-maroon" href="#">
+		<a class="text-3xl font-bold leading-none text-maroon" href="<?php echo BASE_URL; ?>">
             <img width="50px"src="<?php echo BASE_URL ;?>/img/logo.png">
 		</a>
 		<div class="lg:hidden">
