@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 02, 2023 at 01:56 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Servidor: localhost
+-- Tiempo de generación: 06-02-2023 a las 09:34:04
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,17 +18,17 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cryptodomaindb`
+-- Base de datos: `cryptodomaindb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `coins`
+-- Estructura de tabla para la tabla `coins`
 --
 
-CREATE DATABASE `cryptodomaindb`;
-use `cryptodomaindb`;
+CREATE DATABASE cryptodomaindb;
+use cryptodomaindb;
 
 CREATE TABLE `coins` (
   `id_coin` int(11) NOT NULL,
@@ -36,12 +36,12 @@ CREATE TABLE `coins` (
   `coin_abv` varchar(4) NOT NULL,
   `img_coin` varchar(50) NOT NULL,
   `status` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transactions`
+-- Estructura de tabla para la tabla `transactions`
 --
 
 CREATE TABLE `transactions` (
@@ -51,12 +51,12 @@ CREATE TABLE `transactions` (
   `id_coin` int(4) NOT NULL,
   `coin_q` int(10) NOT NULL,
   `cotization` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -71,75 +71,88 @@ CREATE TABLE `users` (
   `avatar` char(100) NOT NULL,
   `status` int(1) NOT NULL,
   `role` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id_user`, `id_wallet`, `email`, `password`, `first_name`, `last_name`, `birth_date`, `fav_coin`, `avatar`, `status`, `role`) VALUES
+(7, 7, 'asdasd@pepe.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Albert', 'Pepe', '2022-12-01', 'ETH', '', 1, 0),
+(8, 8, 'lolito@lolito.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Pepita', 'Fdezsssss', '2022-09-17', 'LUN', '', 1, 0),
+(9, 9, 'lolito@lolito.com', 'e10adc3949ba59abbe56e057f20f883e', 'Lolito', 'Fdez', '2022-09-17', 'DOGE', '', 1, 0),
+(10, 10, 'dayan@dayan.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Dayansssssssssss', 'Guay', '2023-02-23', 'DOGE', '', 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wallet`
+-- Estructura de tabla para la tabla `wallet`
 --
 
 CREATE TABLE `wallet` (
-  `id_wallet` int(11) NOT NULL,
+  `id_wallet` int(3) NOT NULL,
   `id_user` int(4) NOT NULL,
   `coin_obj` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Volcado de datos para la tabla `wallet`
+--
+
+INSERT INTO `wallet` (`id_wallet`, `id_user`, `coin_obj`) VALUES
+(8, 8, ''),
+(9, 9, ''),
+(10, 10, '');
+
+--
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `coins`
+-- Indices de la tabla `coins`
 --
 ALTER TABLE `coins`
   ADD PRIMARY KEY (`id_coin`);
 
 --
--- Indexes for table `transactions`
+-- Indices de la tabla `transactions`
 --
 ALTER TABLE `transactions`
   ADD PRIMARY KEY (`id_trans`);
 
 --
--- Indexes for table `users`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `wallet`
+-- Indices de la tabla `wallet`
 --
 ALTER TABLE `wallet`
   ADD PRIMARY KEY (`id_wallet`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `coins`
+-- AUTO_INCREMENT de la tabla `coins`
 --
 ALTER TABLE `coins`
   MODIFY `id_coin` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `transactions`
+-- AUTO_INCREMENT de la tabla `transactions`
 --
 ALTER TABLE `transactions`
   MODIFY `id_trans` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `wallet`
---
-ALTER TABLE `wallet`
-  MODIFY `id_wallet` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
