@@ -14,6 +14,7 @@
                 orange: '#F08A5D',
                 maroon: '#B83B5E',
                 purple: '#6A2C70',
+                grey: '#FCFCFC',
               }
             }
           }
