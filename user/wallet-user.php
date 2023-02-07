@@ -1,15 +1,8 @@
 <?php
 // Head
 $pageTitle = 'Wallet';
-include_once '../src/templates/head.php';
 
-// Navbar
-include_once '../src/templates/navbarLoggedUser.php';
+require_once '../src/controllers/pathControllers.php';
 
-// Actual view
-include_once '../src/templates/walletUser.php';
-
-// Footer
-include_once '../src/templates/footer.html';
-
+include BASE_PATH.'/src/templates/user/walletUser.php';
 ?>
