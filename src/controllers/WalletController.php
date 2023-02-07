@@ -5,7 +5,7 @@ class Wallet extends Connection {
 
     // CREATE
     public function createWallet($idWallet){
-        $createQuery = $this->con->prepare("INSERT INTO `wallet` (`id_wallet`, `id_user`, `coin_obj`) VALUES (:idWallet, :idWallet,'{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}')");
+        $createQuery = $this->con->prepare("INSERT INTO `wallet` (`id_wallet`, `id_user`, `json_coins`) VALUES (:idWallet, :idWallet,'{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}')");
         $createQuery->bindParam(':idWallet', $idWallet);
         $createQuery->execute();
     }
