@@ -61,8 +61,8 @@ function createChart(prices){
         datasets: [
         {
             label: "Prices",
-            backgroundColor: "grey",
-            borderColor: "maroon",
+            backgroundColor: "#8e5ea2",
+            borderColor: "#8e5ea2",
             data: [prices[0], prices[1], prices[2], prices[3], prices[4], prices[5], prices[6]],
         },
         ],
