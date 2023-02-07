@@ -6,7 +6,7 @@ $email = $_POST['email'];
 $password = md5($_POST['password']);
 
 $user = new Users();
-$userMatched = $user->readUserData("WHERE email='$email' AND password='$password'");
+$userMatched = $user->readUserData("WHERE email='$email' AND password='$password' AND status = '1'");
 
 if ($userMatched){
     session_start();

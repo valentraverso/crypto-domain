@@ -87,11 +87,16 @@ $userData = $user->readUserData("WHERE id_user='$idUser'");
     </select>
       </div>
       <div>
+        <a
+          class="hover:shadow-form rounded-md bg-red-500 py-3 px-8 text-base font-semibold text-white outline-none" href="<?php echo BASE_URL . "/src/funcs/disactivateUser.php"; ?>">
+          Delete
+</a>
+        
         <button
-          class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
-        >
+          class="hover:shadow-form rounded-md bg-[#6A64F1] ml-5 py-3 px-7 text-base font-semibold text-white outline-none">
           Submit
         </button>
+        
       </div>
     </form>
   </div>
