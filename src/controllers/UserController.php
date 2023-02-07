@@ -5,7 +5,6 @@
 require_once BASE_PATH.'/src/controllers/DbConnection.php';
 
 class Users extends Connection{
-
     // Create
     public function createUser($idWallet, $email, $password, $firstName, $lastName, $birthDate, $favCoin, $status, $role){         
         $createQuery = $this->con->prepare("INSERT INTO users 
@@ -23,6 +22,7 @@ class Users extends Connection{
         $createQuery->bindParam(':role', $role);
         $createQuery->execute();
     } 
+    
     // Read
     public function readUserData($queryExtend){
         $sqlQuery = $this->con->prepare("SELECT * FROM users $queryExtend");
