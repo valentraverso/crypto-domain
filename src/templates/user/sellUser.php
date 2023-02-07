@@ -2,15 +2,17 @@
 include BASE_PATH.'/src/templates/components/head.php';
 include BASE_PATH.'/src/templates/components/navbar.php';
 ?>
+<script src="<?php echo BASE_URL ;?>/src/js/sell.js" defer></script>
+<script src ="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
 <div class="h-screen bg-gray-100 pt-20 grid">
     <h1 class="mb-10 text-center text-2xl font-bold">Sell criptos</h1>
 
 <!-- select coin -->
 
 <div class="w-80 max-w-2xl mx-auto">
-
+<form action="<?php echo BASE_URL .'/src/funcs/sell.php';?>" id="formSell">
 	<label for="coins" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select the coin for sell</label>
-        <select id="coins" class="bg-yellow border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-purple dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
+        <select id="coins" name="coin" class="bg-yellow border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-purple dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
         <option selected>Choose from your wallet</option>
         <option value="BTC">Bitcoin</option>
         <option value="ETH">Ethereum</option>
@@ -26,9 +28,9 @@ include BASE_PATH.'/src/templates/components/navbar.php';
 <!-- select quantity money -->
 <div class="max-w-2xl mx-auto">
   <p class="ml-4 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">How much do you want to sell?</p>
-  <form class="m-4 flex">
-    	<input class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" placeholder="100€" required/>
-	</form>
+
+    	<input class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" name="amount" placeholder="100€" id="amount" type="number" required/>
+	
 </div>
 
 
@@ -41,9 +43,9 @@ include BASE_PATH.'/src/templates/components/navbar.php';
           <img src="../img/coin.png" alt="product-image" class="w-full rounded-lg sm:w-40" />
           <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
             <div class="mt-5 sm:mt-0">
-              <h2 class="text-lg font-bold text-gray-900">Bitcoin</h2>
-              <p class="mt-1 text-xs text-gray-700">Current price: {0.356€}</p>
-              <p class="mt-1 text-xs text-gray-700">Quantity: {280.898 BTC}</p>
+              <h2 class="text-lg font-bold text-gray-900" id="coin">Bitcoin</h2>
+              <p class="mt-1 text-xs text-gray-700" id="currentPrice">Current price: {0.356€}</p>
+              <p class="mt-1 text-xs text-gray-700" id="quantity">Quantity: {280.898 BTC}</p>
             </div>
           </div>
         </div>
@@ -53,11 +55,12 @@ include BASE_PATH.'/src/templates/components/navbar.php';
         <div class="flex justify-between">
           <p class="text-lg font-bold">Total</p>
           <div class="">
-            <p class="mb-1 text-lg font-bold">€100.00 EUR</p>
+            <p class="mb-1 text-lg font-bold" id="amountPay">€ </p>
           </div>
         </div>
-        <button class="mt-6 w-full rounded-md bg-purple py-1.5 font-medium text-blue-50 hover:bg-maroon">Sell it</button>
+        <button type="submit" class="mt-6 w-full rounded-md bg-purple py-1.5 font-medium text-blue-50 hover:bg-maroon" id="formSell" onclick="confirmation(event)">Sell it</button>
       </div>
+      </form>
     </div>
   </div>
   <?php
