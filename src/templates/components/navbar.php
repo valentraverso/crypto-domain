@@ -13,7 +13,7 @@
 		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
 			<li><a class="text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL; ?>">Home</a></li>
 			
-			<li><a class="text-sm text-gray-400 hover:text-maroon href="<?php echo BASE_URL.'/user/buy-coins.php'; ?>">Buy</a></li>
+			<li><a class="text-sm font-bold text-maroon hover:text-maroon" href="<?php echo BASE_URL.'/user/buy-coins.php'; ?>">Buy</a></li>
 			
 			<li><a class="text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL.'/user/sell-coins.php'; ?>">Sell</a></li>
 		</ul>
