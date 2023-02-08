@@ -121,9 +121,11 @@ if(isset($admin)){
                     switch($user['status']){
                         case '0':
                             $status = 'Inactive';
+                            $action = 'activate';
                             break;
                         case '1':
                             $status = "Active";
+                            $action = 'deactivate';
                             break;
                     }
                     ?>
@@ -145,10 +147,10 @@ if(isset($admin)){
                     <?php echo $status; ?>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <span user-id='<?php echo $user['id_user'] ;?>' class="font-medium text-blue-600 dark:text-blue-500 hover:underline walletuser">See Wallet</span>
+                        <span user-id='<?php echo $user['id_user'] ;?>' type-action='' class="font-medium text-blue-600 dark:text-blue-500 hover:underline walletuser">See Wallet</span>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <span user-id='<?php echo $user['id_user'] ;?>' class="font-medium text-blue-600 dark:text-blue-500 hover:underline deactivateuser">Deactivate</span>
+                        <span user-id='<?php echo $user['id_user'] ;?>' type-action="<?php echo $action; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline deactivateuser"><?php echo ucfirst($action); ?></span>
                     </td>
                 </tr>
                 <?php
@@ -170,7 +172,7 @@ const btnDeactivate = document.querySelectorAll('.deactivateuser');
 function getTotalUser(e){
     const idUser = e.currentTarget.getAttribute('user-id');
 
-    fetch('<?php echo BASE_URL;?>/src/funcs/returnTotalBalance.php?apiKey=AdminInDaHood&idUser='+idUser)
+    fetch('<?php echo BASE_URL;?>/src/funcs/adminFunctions.php?apiKey=AdminInDaHood&idUser='+idUser+'&typeAction=balance')
     .then(response => response.json())
     .then(data =>{
         const formatNumber = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(data.TOTAL);
@@ -184,8 +186,9 @@ function getTotalUser(e){
 
 function deactivateUser(e){
     const idUser = e.currentTarget.getAttribute('user-id');
+    const action = e.currentTarget.getAttribute('type-action');
 
-    fetch('<?php echo BASE_URL;?>/src/funcs/deactivateUserAdmin.php?apiKey=AdminInDaHood&idUser='+idUser)
+    fetch('<?php echo BASE_URL;?>/src/funcs/adminFunctions.php?apiKey=AdminInDaHood&idUser='+idUser+'&typeAction='+action)
     .then(() => {
         window.location.reload();
     })
