@@ -1,3 +1,28 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once BASE_PATH . "/src/apiCoin.php";
+require_once BASE_PATH . "/src/controllers/WalletController.php";
+
+$id = $_SESSION['id_user'];
+
+$showCoin = new Coins();
+$arrayCoins = $showCoin->setCoin("BTC,ETH,LUN,DOGE", "EUR");
+
+$wallet = new Wallet();
+$arrayWalletCoins = $wallet->getWallet("WHERE id_user=$id");
+
+$jsonEncode = json_decode($arrayWalletCoins['json_coins']);
+
+$priceBTC = $arrayCoins['RAW']['BTC']['EUR']['PRICE'];
+$priceETH = $arrayCoins['RAW']['ETH']['EUR']['PRICE'];
+$priceDOGE = $arrayCoins['RAW']['DOGE']['EUR']['PRICE'];
+$priceLUN = $arrayCoins['RAW']['LUN']['EUR']['PRICE'];
+
+?>
+
 <div class="flex justify-around">
     <div class="min-h-max ">
         <canvas id="doughnut-chart" width="400" height="400"></canvas>
@@ -42,13 +67,13 @@
                         BTC
                     </th>
                     <td class="px-6 py-4">
-                        10
+                        <?php echo $jsonEncode->BTC; ?>
                     </td>
                     <td class="px-6 py-4">
-                        Sliver
+                        <?php echo $priceBTC." €";?>
                     </td>
                     <td class="px-6 py-4">
-                        $2999
+                        <?php echo $priceBTC * $jsonEncode->BTC." €";?>
                     </td>
                     <td class="px-6 py-4 text-right">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
@@ -62,13 +87,13 @@
                         ETH
                     </th>
                     <td class="px-6 py-4">
-                        10
+                        <?php echo $jsonEncode->ETH; ?>
                     </td>
                     <td class="px-6 py-4">
-                        White
+                        <?php echo $priceETH."€";?>
                     </td>
                     <td class="px-6 py-4">
-                        $1999
+                        <?php echo $priceETH * $jsonEncode->ETH." €";?>
                     </td>
                     <td class="px-6 py-4 text-right">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
@@ -82,13 +107,13 @@
                         DOGE
                     </th>
                     <td class="px-6 py-4">
-                        10
+                        <?php echo $jsonEncode->DOGE; ?>
                     </td>
                     <td class="px-6 py-4">
-                        Black
+                        <?php echo $priceDOGE."€";?>
                     </td>
                     <td class="px-6 py-4">
-                        $99
+                        <?php echo $priceDOGE * $jsonEncode->DOGE." €";?>
                     </td>
                     <td class="px-6 py-4 text-right">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
@@ -102,13 +127,13 @@
                         LUN
                     </th>
                     <td class="px-6 py-4">
-                        10
+                        <?php echo $jsonEncode->LUN; ?>
                     </td>
                     <td class="px-6 py-4">
-                        Black
+                        <?php echo $priceLUN."€";?>
                     </td>
                     <td class="px-6 py-4">
-                        $99
+                        <?php echo $priceLUN * $jsonEncode->LUN." €";?>
                     </td>
                     <td class="px-6 py-4 text-right">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
@@ -121,7 +146,7 @@
             <tfoot>
                 <tr class="font-semibold text-gray-900">
                     <th scope="row" class="px-6 py-3 text-base">Total</th>
-                    <td class="px-6 py-3">21,000</td>
+                    <td class="px-6 py-3"><?php echo $priceBTC * $jsonEncode->BTC + $priceETH * $jsonEncode->ETH + $priceDOGE * $jsonEncode->DOGE + $priceLUN * $jsonEncode->LUN . " €" ?></td>
                 </tr>
             </tfoot>
         </table>
