@@ -1,2 +1,2 @@
-./src/controllers/pathControllers.php
+src/controllers/pathControllers.php
 .DS_Store
