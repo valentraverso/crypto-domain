@@ -1,6 +1,6 @@
 <?php
 include BASE_PATH.'/src/templates/components/head.php';
-include BASE_PATH.'/src/templates/components/navbar.php';
+include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 ?>
 <script src="<?php echo BASE_URL ;?>/src/js/sell.js" defer></script>
 <script src ="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>

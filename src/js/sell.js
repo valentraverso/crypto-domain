@@ -1,3 +1,4 @@
+
 let amount = document.querySelector("#amount");
 
 let currentPrice = document.querySelector("#currentPrice");
