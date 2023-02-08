@@ -21,14 +21,12 @@ SET time_zone = "+00:00";
 -- Database: `cryptodomaindb`
 --
 
--- --------------------------------------------------------
+CREATE DATABASE cryptodomaindb;
+use cryptodomaindb;
 
 --
 -- Table structure for table `coins`
 --
-
-CREATE DATABASE cryptodomaindb;
-use cryptodomaindb;
 
 CREATE TABLE `coins` (
   `id_coin` int(11) NOT NULL,
@@ -95,20 +93,20 @@ INSERT INTO `users` (`id_user`, `id_wallet`, `email`, `password`, `first_name`, 
 CREATE TABLE `wallet` (
   `id_wallet` int(3) NOT NULL,
   `id_user` int(4) NOT NULL,
-  `coin_obj` varchar(200) NOT NULL
+  `json_coins` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`json_coins`))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wallet`
 --
 
-INSERT INTO `wallet` (`id_wallet`, `id_user`, `coin_obj`) VALUES
-(0, 0, '{\nEUR: 0,\nBTC: 10000,\nETH: 20000,\nLUN: 100000,\nDOGE: 150000,\n}'),
-(8, 8, ''),
-(9, 9, ''),
-(10, 10, ''),
-(11, 11, ''),
-(12, 12, '');
+INSERT INTO `wallet` (`id_wallet`, `id_user`, `json_coins`) VALUES
+(0, 0, '{\"EUR\": 1, \"BTC\": 10000, \"ETH\": 15000, \"LUN\": 30000, \"DOGE\": 40000}'),
+(8, 8, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
+(9, 9, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
+(10, 10, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
+(11, 11, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
+(12, 12, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}');
 
 --
 -- Indexes for dumped tables
