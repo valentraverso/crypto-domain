@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once BASE_PATH . "/src/apiCoin.php";
 require_once BASE_PATH . "/src/controllers/WalletController.php";
 
@@ -20,10 +16,9 @@ $priceBTC = $arrayCoins['RAW']['BTC']['EUR']['PRICE'];
 $priceETH = $arrayCoins['RAW']['ETH']['EUR']['PRICE'];
 $priceDOGE = $arrayCoins['RAW']['DOGE']['EUR']['PRICE'];
 $priceLUN = $arrayCoins['RAW']['LUN']['EUR']['PRICE'];
-
 ?>
 
-<div class="flex justify-around">
+<div class="flex justify-around my-20">
     <div class="min-h-max ">
         <canvas id="doughnut-chart" width="400" height="400"></canvas>
     </div>
@@ -76,10 +71,10 @@ $priceLUN = $arrayCoins['RAW']['LUN']['EUR']['PRICE'];
                         <?php echo $priceBTC * $jsonEncode->BTC." €";?>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
+                        <a href="<?php echo BASE_URL . '/user/buy-coins.php'; ?>"  class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
+                        <a href="<?php echo BASE_URL . '/user/sell-coins.php'; ?>"  class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
                     </td>
                 </tr>
                 <tr class="bg-white border-b">
@@ -96,13 +91,13 @@ $priceLUN = $arrayCoins['RAW']['LUN']['EUR']['PRICE'];
                         <?php echo $priceETH * $jsonEncode->ETH." €";?>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
+                        <a href="<?php echo BASE_URL . '/user/buy-coins.php'; ?>"  class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
+                        <a href="<?php echo BASE_URL . '/user/sell-coins.php'; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
                     </td>
                 </tr>
-                <tr class="bg-white">
+                <tr class="bg-white border-b">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                         DOGE
                     </th>
@@ -116,13 +111,13 @@ $priceLUN = $arrayCoins['RAW']['LUN']['EUR']['PRICE'];
                         <?php echo $priceDOGE * $jsonEncode->DOGE." €";?>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
+                        <a href="<?php echo BASE_URL . '/user/buy-coins.php'; ?>"  class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
+                        <a href="<?php echo BASE_URL . '/user/sell-coins.php'; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
                     </td>
                 </tr>
-                <tr class="bg-white">
+                <tr class="bg-white border-b">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                         LUN
                     </th>
@@ -136,10 +131,10 @@ $priceLUN = $arrayCoins['RAW']['LUN']['EUR']['PRICE'];
                         <?php echo $priceLUN * $jsonEncode->LUN." €";?>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
+                        <a href="<?php echo BASE_URL . '/user/buy-coins.php'; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Buy</a>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
+                        <a href="<?php echo BASE_URL . '/user/sell-coins.php'; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
                     </td>
                 </tr>
             </tbody>
@@ -160,10 +155,10 @@ let coinAmount = <?php echo json_encode($coinObj); ?>;
 new Chart(document.getElementById("doughnut-chart"), {
     type: 'doughnut',
     data: {
-      labels: ["BTC (€)", "ETH (€)", "DOGE (€)", "LUN (€)"],
+      labels: ["BTC", "ETH", "DOGE", "LUN"],
       datasets: [
         {
-          label: "EUR Amount",
+          label: "Coin Amount",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
           data: [coinAmount.BTC,coinAmount.ETH,coinAmount.DOGE,coinAmount.LUN]
         }

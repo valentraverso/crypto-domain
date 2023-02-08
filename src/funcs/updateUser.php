@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
 $idUser = $_SESSION['id_user'];
 
@@ -16,5 +12,4 @@ $user = new Users();
 
 $user->updateUserData($idUser, $firstName, $lastName);
 header('Location: ../../user/change-profile.php');
-
 ?>

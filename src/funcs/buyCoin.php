@@ -35,7 +35,6 @@ $coinObjAdmin = $walletAdmin['json_coins'];
 $idWalletAdmin = $walletUser['id_wallet'];
 $eurMaster = (json_decode($coinObjAdmin,true)[$selected_coin]); //coins en wallet admin
 
-
 if($actualWallet >= $quantity_money && $eurMaster >= $quantity_coin){
     echo "Buy it!";
 
@@ -50,7 +49,6 @@ if($actualWallet >= $quantity_money && $eurMaster >= $quantity_coin){
 
   $wallet->updateWallet($coinObjUser, '$.EUR', $actualWallet - $quantity_money, $walletRec); //user: cambia cantidad de eur
 
-
   $walletUser = $wallet->getWallet("WHERE id_user=$walletRec"); // usuario
   $coinObjUser = $walletUser['json_coins'];
   $idWalletUser = $walletUser['id_wallet'];
@@ -58,16 +56,12 @@ if($actualWallet >= $quantity_money && $eurMaster >= $quantity_coin){
 
   $wallet->updateWallet($coinObjUser, '$.'.$selected_coin.'', $walletCoins+$quantity_coin, $walletRec); //user: cambia cantidad de coin
 
-
-
   $walletAdmin = $wallet->getWallet("WHERE id_user=0"); 
   $coinObjAdmin = $walletAdmin['json_coins'];
   $idWalletAdmin = $walletUser['id_wallet'];
   $eurMaster = (json_decode($coinObjAdmin, true)["EUR"]); 
 
   $wallet->updateWallet($coinObjAdmin, '$.EUR', $eurMaster + $quantity_money, 0); //admin: cambia cantidad de eur
-
-  
 
   $walletAdmin = $wallet->getWallet("WHERE id_user=0"); 
   $coinObjAdmin = $walletAdmin['json_coins'];
@@ -77,8 +71,11 @@ if($actualWallet >= $quantity_money && $eurMaster >= $quantity_coin){
   $wallet->updateWallet($coinObjAdmin, '$.'.$selected_coin.'', $coinMaster-$quantity_coin, 0); //admin: cambia cantidad de coin
 
    header("Location: ../../user/wallet-user.php");  
+
 }else{
-  echo "No money no honey";
+    header("Location: ../../user/buy-coins.php?msg=msg");
+    die();
 }
 } 
+//if($actualWallet <= $quantity_money)
 ?>

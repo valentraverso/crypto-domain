@@ -1,5 +1,4 @@
 <?php
-
 require_once "../controllers/pathControllers.php";
 require_once "../controllers/UserController.php";
 
@@ -12,5 +11,4 @@ $user->disactivateUser($idUser);
 
 session_destroy();
 header("Location: ../../index.php");
-
 ?>

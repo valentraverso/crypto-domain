@@ -1,6 +1,6 @@
 <?php
 include BASE_PATH.'/src/templates/components/head.php';
-include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
+include BASE_PATH.'/src/templates/components/navbarLoggedUser.php'; 
 
 require_once BASE_PATH . "/src/apiCoin.php";
 
@@ -14,6 +14,11 @@ require_once BASE_PATH . "/src/apiCoin.php";
 
   <form id="formSell" class="m-4 flex" action="../src/funcs/buyCoin.php" method="post">
     	<input id="quantity-money" name="quantity-money" class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" placeholder="100" required/>
+      <?php
+         if(isset($_GET['msg'])){
+                  echo '<br><span class="text-red text-center">No money, no honey! Go to your ' . '<a href="C:\xampp\htdocs\PHP-final\develop-your-project-in-php\user\wallet-user.php">dashboard</a>' . ' and top up your wallet!</span>';
+              }
+        ?>
 </div>
 
 <!-- select coin -->
