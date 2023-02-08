@@ -5,7 +5,6 @@ $pageTitle = 'Admin Home';
 
 require_once '../src/controllers/pathControllers.php';
 require_once BASE_PATH.'/src/controllers/UserController.php';
-require_once BASE_PATH.'/src/controllers/WalletController.php';
 
 require_once BASE_PATH.'/src/templates/components/head.php';
 
@@ -18,19 +17,26 @@ if(isset($admin)){
     <h1>Admin is in da House</h1>
     <img src='<?php echo BASE_URL.'./img/admin.jpg';?>'>
     <?php
-    $wallet = new Wallet;
-    $walletAdmin = $wallet->getWallet("WHERE id_wallet = 0");
-
-    echo "<h2>The admin have in the bank:</h2>";
-    print_r($walletAdmin['json_coins']);
-
-    require_once '../src/controllers/pathControllers.php';
+    require_once BASE_PATH.'/src/controllers/WalletController.php';
     require_once BASE_PATH.'/src/controllers/AdminController.php';
+    require_once BASE_PATH.'/src/apiCoin.php';
 
     $admin = new Admin();
+    $wallet = new Wallet();
+    $coins = new Coins(); 
+
+    $walletAdmin = $wallet->getWallet("WHERE id_wallet = 0");
+    $objWallet = json_decode($walletAdmin['json_coins']);
+
+    $getCotizacion = $coins->setCoin("BTC,ETH,LUN,DOGE", "EUR");
+
+    $totales = $wallet->getTotales($getCotizacion, $objWallet);
+
+    print_r($totales);
+
+    echo "<h2>The admin have in the bank:</h2>";
 
     $users = $admin->getAllUsers();
-
     ?>
 <div class="align-baseline shadow-md rounded-lg">
         <table class="h-auto text-sm text-left text-gray-500" height="300px">
@@ -79,7 +85,7 @@ if(isset($admin)){
                     <?php echo $user['email']; ?>
                     </td>
                     <td class="px-6 py-4">
-                    <?php echo $user['first_name'] . $user['last_name']; ?>
+                    <?php echo $user['first_name'] . " "  . $user['last_name']; ?>
                     </td>
                     <td class="px-6 py-4">
                     <?php echo $user['birth_date']; ?>
