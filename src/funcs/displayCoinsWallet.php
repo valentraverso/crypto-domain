@@ -1,14 +1,3 @@
-<?php
-require_once '../src/controllers/pathControllers.php';
-require_once BASE_PATH.'/src/controllers/WalletController.php';
-
-$wallet = new Wallet;
-
-$id = $_SESSION['id_user'];
-
-$coin = $wallet->getWallet("WHERE id_user=$id");
-$coinObj = json_decode($coin['json_coins']);
-?>
 <div class="flex justify-around">
     <div class="min-h-max ">
         <canvas id="doughnut-chart" width="400" height="400"></canvas>
