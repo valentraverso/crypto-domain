@@ -5,9 +5,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="<?php echo BASE_URL ;?>/src/js/navbar.js"></script>
     <script defer src="<?php echo BASE_URL ;?>/src/js/dynamicChartFetch.js"></script>
-    <script defer src="<?php echo BASE_URL ;?>/src/js/dynamicChartCoins.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="<?php echo BASE_URL ;?>/src/js/buyCoin.js"></script>
     <script>
         tailwind.config = {
           theme: {
