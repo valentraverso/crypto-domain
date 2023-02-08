@@ -16,8 +16,8 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
         <option selected>Choose from your wallet</option>
         <option value="BTC">Bitcoin</option>
         <option value="ETH">Ethereum</option>
-        <option value="TETH">Tether</option>
-        <option value="BNB">BNB</option>
+        <option value="LUN">LUN</option>
+        <option value="DOGE">DOGE</option>
     </select>
 	<script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 </div>
@@ -59,6 +59,17 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
           </div>
         </div>
         <button type="submit" class="mt-6 w-full rounded-md bg-purple py-1.5 font-medium text-blue-50 hover:bg-maroon" id="formSell" onclick="confirmation(event)">Sell it</button>
+  <?php
+   if(isset($_GET['money'])){
+    switch($_GET['money']){
+        case 'noMoney':
+          echo '<p class="text-red text-center">You have not enough crypto or <br>there is not enough money in the market.<br>
+          Sorry baby!</p><br>';
+          echo '<p class = "text-black text-center">Click <a class="text-sky-600" href= "wallet-user.php">HERE</a> to add more funds</p>';
+            break;
+        } 
+  }
+  ?>
       </div>
       </form>
     </div>

@@ -58,6 +58,7 @@ function confirmation(event){
             'Your money is now in your wallet.',
             'success'
           ).then((result)=>{
+              fetch()
               document.querySelector("#formSell").submit();
           })
         //   document.querySelector("#formSell").submit();
