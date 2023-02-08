@@ -1,25 +1,20 @@
-<?php
-require_once '../src/controllers/pathControllers.php';
-require_once BASE_PATH.'/src/controllers/WalletController.php';
-
-$wallet = new Wallet;
-
-$id = $_SESSION['id_user'];
-
-$coin = $wallet->getWallet("WHERE id_user=$id");
-$coinObj = json_decode($coin['json_coins']);
-?>
 <div class="flex justify-around">
-    <div class="min-h-max my-8">
+    <div class="min-h-max ">
         <canvas id="doughnut-chart" width="400" height="400"></canvas>
     </div>
     
 <div class="align-baseline shadow-md rounded-lg">
-    <table class="text-sm text-left text-gray-500" height="300px">
+    <table class="h-auto text-sm text-left text-gray-500" height="200px">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     Coin
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    <div class="flex items-center">
+                        Amount
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg></a>
+                    </div>
                 </th>
                 <th scope="col" class="px-6 py-3">
                     <div class="flex items-center">
@@ -47,6 +42,9 @@ $coinObj = json_decode($coin['json_coins']);
                     BTC
                 </th>
                 <td class="px-6 py-4">
+                    10
+                </td>
+                <td class="px-6 py-4">
                     Sliver
                 </td>
                 <td class="px-6 py-4">
@@ -63,6 +61,9 @@ $coinObj = json_decode($coin['json_coins']);
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                     ETH
                 </th>
+                <td class="px-6 py-4">
+                    10
+                </td>
                 <td class="px-6 py-4">
                     White
                 </td>
@@ -81,6 +82,9 @@ $coinObj = json_decode($coin['json_coins']);
                     DOGE
                 </th>
                 <td class="px-6 py-4">
+                    10
+                </td>
+                <td class="px-6 py-4">
                     Black
                 </td>
                 <td class="px-6 py-4">
@@ -97,6 +101,9 @@ $coinObj = json_decode($coin['json_coins']);
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     LUN
                 </th>
+                <td class="px-6 py-4">
+                    10
+                </td>
                 <td class="px-6 py-4">
                     Black
                 </td>
@@ -145,6 +152,8 @@ new Chart(document.getElementById("doughnut-chart"), {
       }
     }
 });
+
+
 
 </script>
 
