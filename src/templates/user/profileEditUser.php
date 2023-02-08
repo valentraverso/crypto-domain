@@ -104,3 +104,4 @@ $userData = $user->readUserData("WHERE id_user='$idUser'");
 <?php
     include_once BASE_PATH.'/src/templates/components/footer.html';
 ?>
+<script src="../src/js/navbar.js"></script>
