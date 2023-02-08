@@ -25,7 +25,7 @@
 					<div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
 						<ul class="py-2 text-sm text-gray-700 bg-yellow transition duration-200" aria-labelledby="dropdownLargeButton">
 							<li>
-								<a href="<?php echo BASE_URL.'/user/wallet-user.php'; ?>" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Dashboard</a>
+								<a href="<?php if($_SESSION['id_user'] === 0){echo BASE_URL.'/admin';}else{echo BASE_URL.'/user/wallet-user.php';} ?>" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Dashboard</a>
 							</li>
 							<li>
 								<a href="<?php echo BASE_URL . '/user/change-profile.php';?>" class="block px-4 py-2 transition duration-200 hover:bg-maroon hover:text-white">Settings</a>
@@ -65,7 +65,7 @@
 						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL.'/user/sell-coins.php'; ?>">Sell</a>
 					</li>
 					<li class="mb-1">
-						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL.'/user/wallet-user.php'; ?>">Dashboard</a>
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php if($_SESSION['id_user'] === 0){echo BASE_URL.'/admin';}else{echo BASE_URL.'/user/wallet-user.php';}  ?>">Dashboard</a>
 					</li>
 				</ul>
 			</div>
