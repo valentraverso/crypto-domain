@@ -9,7 +9,6 @@ const beforeCanvas = document.querySelector("#beforeCanvas")
 const canvas = document.querySelector("#chartLine")
 let chartHeader = document.querySelector("#chartHeader")
 
-
 btcBtn.addEventListener("click", createNewChart);
 ethBtn.addEventListener("click", createNewChart);
 dogeBtn.addEventListener("click", createNewChart);
