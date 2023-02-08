@@ -86,66 +86,6 @@ if(isset($admin)){
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
                     </td>
                 </tr>
-                <tr class="bg-white border-b">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        ETH
-                    </th>
-                    <td class="px-6 py-4">
-                        10
-                    </td>
-                    <td class="px-6 py-4">
-                        White
-                    </td>
-                    <td class="px-6 py-4">
-                        $1999
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
-                    </td>
-                </tr>
-                <tr class="bg-white">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                        DOGE
-                    </th>
-                    <td class="px-6 py-4">
-                        10
-                    </td>
-                    <td class="px-6 py-4">
-                        Black
-                    </td>
-                    <td class="px-6 py-4">
-                        $99
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
-                    </td>
-                </tr>
-                <tr class="bg-white">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                        LUN
-                    </th>
-                    <td class="px-6 py-4">
-                        10
-                    </td>
-                    <td class="px-6 py-4">
-                        Black
-                    </td>
-                    <td class="px-6 py-4">
-                        $99
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                    <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
-                    </td>
-                </tr>
             </tbody>
             <tfoot>
                 <tr class="font-semibold text-gray-900">
