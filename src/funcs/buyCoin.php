@@ -2,6 +2,7 @@
 
 require_once "../controllers/pathControllers.php";
 require_once BASE_PATH . "/src/controllers/CoinsController.php";
+require_once BASE_PATH . "/src/controllers/WalletController.php";
 // require_once BASE_PATH . "/src/controllers/DbConnection.php";
 require_once BASE_PATH . "/src/apiCoin.php";
 
@@ -14,6 +15,9 @@ require_once BASE_PATH . "/src/apiCoin.php";
 
 session_start();
 $walletRec = $_SESSION["id_user"];
+//$wallet_id = $_SESSION["id_wallet"]; //<==
+//$json = $_SESSION["json_coins"]; <==
+
 
 if (isset($_POST['quantity-money']) && isset($_POST['select-coin'])) {
     $quantity_money = $_POST['quantity-money'];
@@ -25,7 +29,11 @@ if (isset($_POST['quantity-money']) && isset($_POST['select-coin'])) {
     $quantity_coin = $quantity_money/$price;
 
     $transaction = new Coin();
-    $transaction->createTransaction("1", $walletRec , "1", $quantity_coin, $price);
+    $transaction->createTransaction("0", $walletRec , "1", $quantity_coin, $price);
+
+    $walletRegist = new Wallet();
+    $walletRegist->createWallet($walletRec);
+
 
   header("Location: ../../user/wallet-user.php"); 
   } 
