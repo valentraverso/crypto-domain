@@ -5,6 +5,7 @@ $idUser = $_GET['idUser'];
 
 if($apiKey !== 'AdminInDaHood'){
     header('location:../src/hackerPage.php');
+    die();
 }
 
 require_once '../controllers/pathControllers.php';
