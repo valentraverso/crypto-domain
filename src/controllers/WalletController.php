@@ -33,8 +33,7 @@ class Wallet extends Connection {
         return $totales;
     }
 
-    // UNDATE 
-    
+    // UPDATE 
     public function updateWallet($actualWallet, $coin, $qCoin, $idWallet){
         $properWallet = str_replace('"', '\"', $actualWallet);
         $updateWalletQuery = $this->con->prepare("UPDATE wallet SET json_coins = JSON_REPLACE('$properWallet', :coin, $qCoin) WHERE id_wallet = :idWallet");

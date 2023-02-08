@@ -14,7 +14,9 @@ $admin = $user->readUserData("WHERE id_user = ". $_SESSION['id_user']." AND ROLE
 
 if(isset($admin)){
     ?>
-    <h1>Admin is in da House</h1>
+    <div class="">
+        <h1>Admin is in da House</h1>
+    </div>
     <img src='<?php echo BASE_URL.'./img/admin.jpg';?>'>
     <?php
     require_once BASE_PATH.'/src/controllers/WalletController.php';
@@ -125,7 +127,7 @@ if(isset($admin)){
                     <?php echo $user['birth_date']; ?>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">See Wallet</a>
+                        <span user-id='<?php echo $user['id_user'] ;?>' class="font-medium text-blue-600 dark:text-blue-500 hover:underline walletuser">See Wallet</span>
                     </td>
                     <td class="px-6 py-4 text-right">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Deactivate</a>
@@ -138,11 +140,33 @@ if(isset($admin)){
             <tfoot>
                 <tr class="font-semibold text-gray-900">
                     <th scope="row" class="px-6 py-3 text-base">Total Users:</th>
-                    <td class="px-6 py-3"><?php echo sizeof($user); ?></td>
+                    <td class="px-6 py-3"><?php echo sizeof($users); ?></td>
                 </tr>
             </tfoot>
         </table>
 </div>
+<script>
+const btnWallet = document.querySelectorAll('.walletuser');
+
+function getTotalUser(e){
+    const idUser = e.currentTarget.getAttribute('user-id');
+
+    fetch('<?php echo BASE_URL;?>/src/funcs/returnTotalBalance.php?apiKey=AdminInDaHood&idUser='+idUser)
+    .then(response => response.json())
+    .then(data =>{
+        const formatNumber = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(data.TOTAL);
+        Swal.fire(
+     'Actual Balance of this account:',
+     formatNumber.toString()
+     
+   )
+    })
+}
+
+btnWallet.forEach(item => {
+    item.addEventListener('click', getTotalUser)
+});
+</script>
     <?php
 }else{
     header("location: ../");
