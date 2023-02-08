@@ -137,6 +137,23 @@ $priceLUN = $arrayCoins['RAW']['LUN']['EUR']['PRICE'];
                         <a href="<?php echo BASE_URL . '/user/sell-coins.php'; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sell</a>
                     </td>
                 </tr>
+                <tr class="bg-white border-b">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                        EUR
+                    </th>
+                    <td class="px-6 py-4">
+                        Available
+                    </td>
+                    <td class="px-6 py-4">
+                    </td>
+                    <td class="px-6 py-4">
+                        <?php echo $jsonEncode->EUR." €";?>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                    </td>
+                </tr>
             </tbody>
             <tfoot>
                 <tr class="font-semibold text-gray-900">
