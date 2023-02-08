@@ -58,6 +58,7 @@ require_once BASE_PATH . "/src/apiCoin.php";
     </form>
     </div>
   </div>
+<script src="<?php echo BASE_URL ;?>/src/js/buyCoin.js"></script>
 <?php
     include_once BASE_PATH.'/src/templates/components/footer.html';
 ?>
