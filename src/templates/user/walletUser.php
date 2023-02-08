@@ -6,5 +6,4 @@ include_once BASE_PATH.'/src/templates/components/dynamicChart.php';
 include_once BASE_PATH.'/src/templates/components/footer.html';
 ?>
 <script src="../src/js/dynamicChartFetch.js"></script>
-<script src="../src/js/navbar.js"></script>
-<script src="../src/js/navbar.js"></script>
+<script src="../../src/js/navbar.js"></script>
