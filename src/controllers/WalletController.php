@@ -19,6 +19,20 @@ class Wallet extends Connection {
         return $result;
     }
 
+    public function getTotales($getCotizacion, $objWallet){
+        $totales = array('TOTAL' => 0,'EUR' => 0,);
+
+        $totales['EUR'] = $objWallet->EUR;
+        $totales['TOTAL'] += $objWallet->EUR;
+  
+        foreach($getCotizacion['RAW'] as $key => $crypto){
+            $totales[$key] = $crypto['EUR']['PRICE'] * $objWallet->$key;
+            $totales['TOTAL'] += $crypto['EUR']['PRICE'] * $objWallet->$key;
+        }
+    
+        return $totales;
+    }
+
     // UNDATE 
     
     public function updateWallet($actualWallet, $coin, $qCoin, $idWallet){
