@@ -10,12 +10,12 @@ $coin = $wallet->getWallet("WHERE id_user=$id");
 $coinObj = json_decode($coin['json_coins']);
 ?>
 <div class="flex justify-around">
-    <div class="min-h-max my-8">
+    <div class="min-h-max ">
         <canvas id="doughnut-chart" width="400" height="400"></canvas>
     </div>
     
 <div class="align-baseline shadow-md rounded-lg">
-    <table class="h-auto text-sm text-left text-gray-500" height="300px">
+    <table class="h-auto text-sm text-left text-gray-500" height="200px">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
                 <th scope="col" class="px-6 py-3">
@@ -163,6 +163,8 @@ new Chart(document.getElementById("doughnut-chart"), {
       }
     }
 });
+
+
 
 </script>
 
