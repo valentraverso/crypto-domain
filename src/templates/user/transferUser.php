@@ -20,7 +20,7 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 <!-- select quantity money -->
 <div class="max-w-2xl mx-auto">
   <p class="ml-4 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">How much do you want to transfer?</p>
-    	<input class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" name="amount" placeholder="100BTC" min='0' id="amount" type="number" required/>
+    	<input class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" step='any' name="amount" placeholder="100BTC" min='0' id="amount" type="number" required/>
       <br>
         <span id='quantityWallet'></span>
 </div>

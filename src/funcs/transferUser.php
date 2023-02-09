@@ -57,3 +57,5 @@ $recieverMonedas = json_decode($recieverWallet['json_coins']);
 $sumRecieverWallet = $recieverMonedas->$coin + $amount;
 
 $addCoinsReciever = $wallet->updateWallet($recieverWallet['json_coins'], $coinToTransfer, $sumRecieverWallet, $idRecieverWallet);
+
+header('location:../../user/wallet-user.php');
