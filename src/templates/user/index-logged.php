@@ -30,5 +30,3 @@ include_once BASE_PATH.'/src/templates/components/pricesBtcChart.php';
 // Footer
 include_once BASE_PATH.'/src/templates/components/footer.html';
 ?>
-
-<script src="./src/js/navbar.js"></script>

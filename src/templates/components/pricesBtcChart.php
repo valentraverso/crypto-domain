@@ -6,9 +6,9 @@ $arrayCoins = $showCoin->setCoin("BTC,ETH,LUN,DOGE", "EUR");
 
 ?>
 
-<section>
-        <h2 class='font pl-5 text-2xl font-bold'>Prices</h2>
-        <div class="flex flex-col">
+<section class="flex flex-col align-center justify-center items-center">
+        <h2 class='text-5xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400 py-12'>Prices</h2>
+        <div class="flex justify-center pb-24 align-center shadow-md rounded-lg mb-12">
             <div>
               <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
