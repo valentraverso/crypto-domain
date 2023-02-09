@@ -41,6 +41,6 @@ You need to fullfill after where it's indicated, and it's going to see like this
 ## Authors
 
 - [**Iuliia Shikhanova**](https://github.com/IuliiaNova)
-- **Albert Gomis**(https://github.com/AlbertGomisM)
-- **Ruben Zafra Traver**(https://github.com/RubenZafra) - *Design Manager*
-- **Valentino Traverso**(https://github.com/valentraverso) - *Project Manager*
+- [**Albert Gomis**(https://github.com/AlbertGomisM)
+- [**Ruben Zafra Traver**](https://github.com/RubenZafra) - *Design Manager*
+- [**Valentino Traverso**](https://github.com/valentraverso) - *Project Manager*
