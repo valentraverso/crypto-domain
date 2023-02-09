@@ -1,8 +1,15 @@
 const selectCoins = document.querySelector('#coins');
 const inputAmountSent = document.querySelector('#amount');
 const btnTransfer = document.querySelector('#btnTransfer');
+const inputEmailUser = document.querySelector('#emailUser');
+const pMsgError = document.querySelector('#msgError');
 
 btnTransfer.disabled = true;
+
+const coinsValidation = {
+    quantity: false,
+    email: false,
+}
 
 function getCoins(){
     fetch('../src/funcs/getCoinsUser.php')
@@ -40,9 +47,41 @@ function showTotal(e){
         e.preventDefault();
     } 
 
+    if(actualCoin?.name <= 0 || valueInputAmount > actualCoin.name){
+        pMsgError.textContent = 'You dont have the funds.';
+        coinsValidation.quantity = false;
+    }else{
+        pMsgError.textContent = '';
+        coinsValidation.quantity = true;
+    }
 
+    validationForm();
+}
+
+function validateEmail(){
+    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    if(inputEmailUser.value.match(mailformat)){
+        coinsValidation.email = true;
+    }else{
+        coinsValidation.email = false;
+        pMsgError.textContent = 'Enter a valid email.';
+    }
+
+    validationForm();
+}
+
+function validationForm(){
+    if(coinsValidation.quantity & coinsValidation.email){
+        btnTransfer.disabled = false;
+        console.log(coinsValidation)
+    }else{
+        btnTransfer.disabled = true;
+    }
 }
 
 selectCoins.addEventListener('change', getCoins);
 inputAmountSent.addEventListener('keydown', showTotal);
 inputAmountSent.addEventListener('keyup', showTotal);
+inputEmailUser.addEventListener('keydown', validateEmail);
+inputEmailUser.addEventListener('keyup', validateEmail);
