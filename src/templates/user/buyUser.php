@@ -10,15 +10,18 @@ require_once BASE_PATH . "/src/apiCoin.php";
 <!-- select quantity money -->
 <div class="max-w-2xl mx-auto">
   <p class="ml-4 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">How much do you want to buy in € (EUR)?</p>
-
   <form id="formSell" class="m-4 flex" action="../src/funcs/buyCoin.php" method="post">
-    	<input id="quantity-money" name="quantity-money" class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" placeholder="100" required/>
+    	<input id="quantity-money" name="quantity-money" class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" placeholder="100€" required/>
+      
 </div>
+<div class="w-80 max-w-2xl mx-auto">
 <?php
-         if(isset($_GET['msg'])){
-                  echo '<span class="text-red text-center text-xs">No money, no honey! Go to your ' . '<a href="' . BASE_URL . '/user/wallet-user.php"><b> dashboard</b></a>' . ' and top up your wallet!</span>';
-              }
+  if(isset($_GET['msg'])){
+      echo '<span class="text-red text-center text-xs">No money, no honey! Go to your ' . '<a href="' . BASE_URL . '/user/wallet-user.php"><b> dashboard</b></a>' . ' and top up your wallet!</span>';
+    }
         ?>
+</div>
+<br>
 <!-- select coin -->
 <div class="w-80 max-w-2xl mx-auto">
 	<label for="coins" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an option</label>
@@ -38,7 +41,7 @@ require_once BASE_PATH . "/src/apiCoin.php";
           <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
             <div class="mt-5 sm:mt-0">
               <h2 id="name-coin" class="text-lg font-bold text-gray-900">Bitcoin</h2>
-              <p class="mt-1 text-xs text-gray-700"><b>Current price in € (EUR): </b><span id="price-coin" ></span></p>
+              <p class="mt-1 text-xs text-gray-700"><b>Current price in EUR: </b><span id="price-coin" ></span></p>
               <p class="mt-1 text-xs text-gray-700"><b>Quantity: </b><span id="quantity-coin" ></span></p>
             </div>
           </div>
@@ -47,7 +50,7 @@ require_once BASE_PATH . "/src/apiCoin.php";
       <!-- total -->
       <div class="mt-6 mb-6 rounded-lg border bg-white p-6 shadow-md md:w-1/2grid justify-items-center">
         <div class="flex justify-between">
-          <p class="text-lg font-bold">Total in € (EUR):</p>
+          <p class="text-lg font-bold">Total EUR:</p>
           <div class="">
             <p class="mb-1 text-lg font-bold"><span id="totalBuy">00.00</span></p>
           </div>
