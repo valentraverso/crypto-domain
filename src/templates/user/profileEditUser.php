@@ -88,7 +88,7 @@ $userData = $user->readUserData("WHERE id_user='$idUser'");
       </div>
       <div>
         <a
-          class="hover:shadow-form rounded-md bg-red-500 py-3 px-8 text-base font-semibold text-white outline-none" id="btnDeleteUser">
+          class="cursor-no-drop hover:shadow-form rounded-md bg-red-500 py-3 px-8 text-base font-semibold text-white outline-none" id="btnDeleteUser">
           Delete
 </a>
         

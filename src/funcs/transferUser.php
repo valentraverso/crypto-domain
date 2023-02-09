@@ -1,5 +1,5 @@
 <?php
-require_once'../controllers/pathControllers.php';
+require_once '../controllers/pathControllers.php';
 require_once BASE_PATH . "/src/apiCoin.php";
 require_once BASE_PATH.'/src/controllers/UserController.php';
 require_once BASE_PATH.'/src/controllers/transactionsController.php';

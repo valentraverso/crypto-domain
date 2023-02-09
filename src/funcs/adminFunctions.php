@@ -1,6 +1,5 @@
 <?php
 $apiKey = $_GET['apiKey'];
-
 if($apiKey !== 'AdminInDaHood'){
     header('location:../src/hackerPage.php');
     die();

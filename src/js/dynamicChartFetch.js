@@ -1,5 +1,4 @@
 window.addEventListener("load", onLoadChart);
-
 const chart = document.querySelector("#chart");
 const btcBtn = document.querySelector("#btcBtn")
 const ethBtn = document.querySelector("#ethBtn")
@@ -31,14 +30,11 @@ function onLoadChart(){
             }        
         )
 }
-
-function createNewChart(event){
-    
+function createNewChart(event){   
     myChart.destroy();
     coin = event.srcElement.innerText;
     chartHeader.innerText = event.srcElement.innerText;
-    const url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${coin}&tsym=EUR&limit=6`;
-        
+    const url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${coin}&tsym=EUR&limit=6`;       
     let prices = [];
     
     fetch(url)
@@ -51,9 +47,7 @@ function createNewChart(event){
             }        
         ) 
 }
-
 function createChart(prices){
-
     const labels = ["DAY 1", "DAY 2", "DAY 3", "DAY 4", "DAY 5", "DAY 6", "DAY 7"];
     const data = {
         labels: labels,
@@ -65,14 +59,12 @@ function createChart(prices){
             data: [prices[0], prices[1], prices[2], prices[3], prices[4], prices[5], prices[6]],
         },
         ],
-    };
-    
+    };   
     const configLineChart = {
         type: "line",
         data,
         options: {},
-    };
-    
+    };   
     myChart = new Chart(
         document.getElementById("chartLine"),
         configLineChart
