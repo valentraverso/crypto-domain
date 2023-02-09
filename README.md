@@ -26,3 +26,13 @@ Which refers to the relative path where your localhost runs.
 You need to after it's indicated, and your route its going to see like:
 
     define ('BASE_URL', 'http://'.$_SERVER['HTTP_HOST'].'/assembler/develop-your-project-in-php');
+
+## BASE_PATH
+
+Then you must change the absolute path wich it's going to help when differents files requires others.
+
+You need to fullfill after where it's indicated, and it's going to see like this:
+
+    define ('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/assembler/develop-your-project-in-php');
+
+🤔Reminder: Both dynamic path text need to be the same.
