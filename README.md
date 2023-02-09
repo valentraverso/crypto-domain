@@ -11,7 +11,7 @@ Use the app here👇<br>
 - [Previous Settings](#previous-settings)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Authors](#authors)
+- [Developers](#developers)
 
 ## Previous Settings
 

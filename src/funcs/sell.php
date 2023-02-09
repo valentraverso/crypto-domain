@@ -7,8 +7,8 @@ require_once(BASE_PATH.'/src/controllers/WalletController.php');
 session_start();
 $idUser = $_SESSION["id_user"];
 
-$coin = $_GET["coin"];
-$amount = $_GET["amount"];
+$coin = $_POST["coin"];
+$amount = $_POST["amount"];
 
 $showCoin = new Coins();
 $price = $showCoin->setCoin($coin, "EUR")["RAW"][$coin]["EUR"]["PRICE"];
@@ -33,9 +33,6 @@ $walletMaster = $wallet->getWallet("WHERE id_user=0");
 $coinObjMaster = ($walletMaster['json_coins']);
 $coinMaster = (json_decode($coinObjMaster,true)[$coin]);
 
-// echo $coinMaster . "<br>";
-// echo $eurMaster . "EurMaster <br>";
-// echo $eurUser . "<br>";
 
 if($eurMaster - $amount >= 0 && $coinUser - $amountCoin >= 0 ){
     echo "You can sell";
@@ -45,8 +42,8 @@ if($eurMaster - $amount >= 0 && $coinUser - $amountCoin >= 0 ){
     
     
     
-    // $transaction = new Transaction();
-    // $transaction -> createTransaction($walletSend, $walletRec, $coin, $amountCoin, $price);
+    $transaction = new Transaction();
+    $transaction -> createTransaction($walletSend, $walletRec, $coin, $amountCoin, $price);
     
     
     $wallet->updateWallet($coinObjMaster, '$.EUR',$eurMaster - $amount,0);
@@ -66,9 +63,10 @@ if($eurMaster - $amount >= 0 && $coinUser - $amountCoin >= 0 ){
 
     $wallet->updateWallet($coinObjUser, '$.EUR',$eurUser + $amount,$idUser);
     
-    // header("Location: ../../user/wallet-user.php");
+    header("Location: ../../user/wallet-user.php");
 } else{
     echo "You can not sell";
+    header("Location: ../../user/sell-coins.php?money=noMoney");
 }
 
 

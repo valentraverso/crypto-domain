@@ -5,13 +5,6 @@ require_once BASE_PATH . "/src/controllers/CoinsController.php";
 require_once BASE_PATH . "/src/controllers/WalletController.php";
 require_once BASE_PATH . "/src/apiCoin.php";
 
-/**
- * @ $quantity_money - our money to invest;
- * @ $selected_coin - name of coin;
- * @ $price - current price;
- * @ $quantity_coin - how much coins we can buy with $quantity_money;
- */
-
 session_start();
 $walletRec = $_SESSION["id_user"];
 
@@ -43,10 +36,27 @@ if($actualWallet >= $quantity_money && $eurMaster >= $quantity_coin){
     print_r($actualWallet);
     echo "<hr>" . $quantity_money;
     echo $walletRec; 
+    
 
   $transaction = new Coin();
 
-  $transaction->createTransaction("0", $walletRec , "1", $quantity_coin, $price); 
+  //id_coin
+  switch($selected_coin){
+    case "BTC":
+      $id_coin = 1;
+      break;
+    case "ETH":
+      $id_coin = 2;
+      break;
+    case "LUN":
+      $id_coin = 3;
+      break;
+    case "DOGE":
+        $id_coin = 4;
+        break;
+  }
+
+  $transaction->createTransaction("0", $walletRec , $id_coin, $quantity_coin, $price); 
 
   $wallet->updateWallet($coinObjUser, '$.EUR', $actualWallet - $quantity_money, $walletRec); //user: eur
 
