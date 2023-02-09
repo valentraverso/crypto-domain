@@ -6,4 +6,6 @@ $coinQuery = $coin->getWallet("WHERE id_user = ".$_SESSION['id_user']);
 $monedas = $coinQuery['json_coins'];
 $idWallet = $coinQuery['id_wallet'];
 
-$coin->updateWallet($monedas, '$.EUR', $monedas['EUR'] + 10, 11);
+$newEur = $monedas['EUR'] + 10;
+
+$coin->updateWallet($monedas, '$.EUR', $newEur, 11);

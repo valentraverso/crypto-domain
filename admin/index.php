@@ -5,6 +5,7 @@ $pageTitle = 'Admin Home';
 
 require_once '../src/controllers/pathControllers.php';
 require_once BASE_PATH.'/src/controllers/UserController.php';
+include_once BASE_PATH . '/src/templates/components/navbarLogin.php';
 
 require_once BASE_PATH.'/src/templates/components/head.php';
 
@@ -14,10 +15,16 @@ $admin = $user->readUserData("WHERE id_user = ". $_SESSION['id_user']." AND ROLE
 
 if(isset($admin)){
     ?>
-    <div class="">
-        <h1>Admin is in da House</h1>
+    <div class="flex justify-around">
+        <div class="flex flex-col gap-y-2  justify-items-stretch text-center ">
+            <h1 class="text-5xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">Admin</h1>
+            <h2 class="text-3xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">IS</h2> 
+            <h2 class="text-3xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">IN</h2> 
+            <h2 class="text-3xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">DA</h2> 
+            <h2 class="text-5xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">HOUSE</h2> 
+        </div>
+        <img class="rounded-lg drop-shadow-xl"src='<?php echo BASE_URL.'/img/admin.jpg';?>' width="650px">
     </div>
-    <img src='<?php echo BASE_URL.'./img/admin.jpg';?>'>
     <?php
     require_once BASE_PATH.'/src/controllers/WalletController.php';
     require_once BASE_PATH.'/src/controllers/AdminController.php';
