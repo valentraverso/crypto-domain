@@ -7,7 +7,7 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 <h1 class="mb-10 text-center text-2xl font-bold">Transfer to your panas</h1>
 <!-- select coin -->
 <div class="w-80 max-w-2xl mx-auto">
-<form action="<?php echo BASE_URL .'/src/funcs/transferUser.php';?>" id="formSell">
+<form method='post' action="<?php echo BASE_URL .'/src/funcs/transferUser.php';?>" id="formSell">
 	<label for="coins" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select the coin for sell</label>
     <select id="coins" name="coin" class="bg-yellow border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-purple dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
       <option disabled selected>Choose from your wallet</option>
