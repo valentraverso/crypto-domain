@@ -40,7 +40,23 @@ if($actualWallet >= $quantity_money && $eurMaster >= $quantity_coin){
 
   $transaction = new Coin();
 
-  $transaction->createTransaction("0", $walletRec , "1", $quantity_coin, $price); 
+  //id_coin
+  switch($selected_coin){
+    case "BTC":
+      $id_coin = 1;
+      break;
+    case "ETH":
+      $id_coin = 2;
+      break;
+    case "LUN":
+      $id_coin = 3;
+      break;
+    case "DOGE":
+        $id_coin = 4;
+        break;
+  }
+
+  $transaction->createTransaction("0", $walletRec , $id_coin, $quantity_coin, $price); 
 
   $wallet->updateWallet($coinObjUser, '$.EUR', $actualWallet - $quantity_money, $walletRec); //user: eur
 

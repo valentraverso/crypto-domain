@@ -1,6 +1,9 @@
 const putMoney = document.getElementById("quantity-money");
 putMoney.addEventListener("input", chooseHowMuch);
 
+let imgCoin = document.getElementById("img");
+
+
 function chooseHowMuch() {
     let inputValue = putMoney.value;
     let total = document.getElementById("totalBuy");
@@ -15,6 +18,8 @@ function chooseCoin() {
     let selectOptionValue = selectOptionCoin.value;
     let nameCoin = document.getElementById("name-coin");
     nameCoin.innerHTML = selectOptionValue;
+    imgCoin.setAttribute('src', './../img/'+selectOptionValue+'.png');
+
     currentPrice();
 }
 
@@ -28,7 +33,7 @@ function currentPrice() {
         .then((data) => {
             let priceCoin = data.RAW[selectOptionValue].EUR.PRICE;
             let priceDisplay = document.getElementById("price-coin");
-            priceDisplay.innerHTML = priceCoin + " €";
+            priceDisplay.innerHTML = priceCoin.toFixed(3) + " €";
             let inputValue = putMoney.value;
             quantityCoins(priceCoin, inputValue);
         })
@@ -37,7 +42,7 @@ function currentPrice() {
 function quantityCoins(priceCoin, inputValue) {
     let quantity = inputValue / priceCoin;
     let quantityDisplay = document.getElementById("quantity-coin");
-    quantityDisplay.innerHTML = quantity + " " + selectOptionCoin.value;
+    quantityDisplay.innerHTML = quantity.toFixed(4) + " " + selectOptionCoin.value;
 }
 
 // Confirmation

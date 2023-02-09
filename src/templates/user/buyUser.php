@@ -37,7 +37,7 @@ require_once BASE_PATH . "/src/apiCoin.php";
     <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
       <div class="rounded-lg">
         <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-          <img src="../img/coin.png" alt="product-image" class="w-full rounded-lg sm:w-40" />
+          <img src="../img/coin.png" id="img" alt="product-image" class="w-1/2 rounded-lg sm:w-40" />
           <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
             <div class="mt-5 sm:mt-0">
               <h2 id="name-coin" class="text-lg font-bold text-gray-900">Bitcoin</h2>
