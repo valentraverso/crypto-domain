@@ -10,7 +10,7 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
  if(isset($_GET['money'])){
   switch($_GET['money']){
       case 'noMoney':
-        echo '<p class="text-red text-center">You have not enough crypto or <br>there is not enough money in the market.<br>
+        echo '<p class="text-red text-center">There is not enough money in the market.<br>
         Sorry baby!</p><br>';
         echo '<p class = "text-black text-center">Click <a class="text-sky-600" href= "wallet-user.php">HERE</a> to add more funds</p><br><br>';
           break;

@@ -27,6 +27,9 @@ include BASE_PATH.'/src/templates/components/navbarLogin.php';
               case 'emptyFields':
                   echo '<p id="errorMessageLogin">All fields must be filled!</p>';
                   break;
+              case"inactive":
+                echo '<p id="errorMessageLogin">You are banned!</p>';
+                  break;
               } 
         }
         ?>

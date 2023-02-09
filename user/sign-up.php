@@ -2,7 +2,6 @@
 require_once '../src/controllers/pathControllers.php';
 
 session_start();
-session_start();
 if(isset($_SESSION['id_user'])){
   echo 'sesion iniciada';
   header('location:'.BASE_URL);

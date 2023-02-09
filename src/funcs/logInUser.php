@@ -6,12 +6,21 @@ $email = $_POST['email'];
 $password = md5($_POST['password']);
 
 $user = new Users();
-$userMatched = $user->readUserData("WHERE email='$email' AND password='$password' AND status = '1'");
+$userMatched = $user->readUserData("WHERE email='$email' AND password='$password'");
+
+
 
 if ($userMatched){
-    session_start();
-    $_SESSION['id_user'] = $userMatched['id_user'];
-    header('Location: ../../index.php');
+    switch($userMatched["status"]){
+        case "0":
+            header('Location: ../../user/login.php?msg=inactive');
+            break;
+        case "1":
+            session_start();
+            $_SESSION['id_user'] = $userMatched['id_user'];
+            header('Location: ../../index.php');
+            break;
+    }
 }else{
     header('Location: ../../user/login.php?msg=error');
 }
