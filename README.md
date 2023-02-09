@@ -107,4 +107,4 @@ This is the page where the admin lives. He can see all wallets, deativate users,
 - [**Iuliia Shikhanova**](https://github.com/IuliiaNova)
 - [**Albert Gomis**](https://github.com/AlbertGomisM)
 - [**Ruben Zafra Traver**](https://github.com/RubenZafra) - *Design Manager*
-- [**Valentino Traverso**](https://github.com/valentraverso) - *Project Manager*Features
+- [**Valentino Traverso**](https://github.com/valentraverso) - *Project Manager*
