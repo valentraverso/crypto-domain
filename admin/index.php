@@ -15,15 +15,15 @@ $admin = $user->readUserData("WHERE id_user = ". $_SESSION['id_user']." AND ROLE
 
 if(isset($admin)){
     ?>
-    <div class="flex justify-around">
-        <div class="flex flex-col gap-y-2  justify-items-stretch text-center ">
+    <div class="pt-24 pl-48 flex justify-around">
+        <div class="flex flex-col gap-y-2 pt-8 justify-items-stretch text-center ">
             <h1 class="text-5xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">Admin</h1>
             <h2 class="text-3xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">IS</h2> 
             <h2 class="text-3xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">IN</h2> 
             <h2 class="text-3xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">DA</h2> 
             <h2 class="text-5xl font-bold mt-0 mb-4 drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-r from-maroon to-pink-400">HOUSE</h2> 
         </div>
-        <img class="rounded-lg drop-shadow-xl"src='<?php echo BASE_URL.'/img/admin.jpg';?>' width="650px">
+        <a href="" target="_blank"><img class="rounded-lg drop-shadow-xl hover:scale-110 transition duration-300 ease-in-out ml-32 mb-12"src='<?php echo BASE_URL.'/img/admin.jpg';?>' width="650px"></a>
     </div>
     <?php
     require_once BASE_PATH.'/src/controllers/WalletController.php';
@@ -43,7 +43,7 @@ if(isset($admin)){
 
     $users = $admin->getAllUsers();
     ?>
-    <div class="md:col-span-2 lg:col-span-1" >
+    <div class="md:col-span-2 lg:col-span-1 mb-24" >
                 <div class="py-8 px-6 space-y-6 rounded-xl border border-gray-200 bg-white">
                     <svg class="w-40 m-auto opacity-75" viewBox="0 0 146 146" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M73.1866 5.7129C81.999 5.7129 90.725 7.44863 98.8666 10.821C107.008 14.1933 114.406 19.1363 120.637 25.3675C126.868 31.5988 131.811 38.9964 135.184 47.138C138.556 55.2796 140.292 64.0057 140.292 72.818C140.292 81.6304 138.556 90.3565 135.184 98.4981C131.811 106.64 126.868 114.037 120.637 120.269C114.406 126.5 107.008 131.443 98.8666 134.815C90.725 138.187 81.999 139.923 73.1866 139.923C64.3742 139.923 55.6481 138.187 47.5066 134.815C39.365 131.443 31.9674 126.5 25.7361 120.269C19.5048 114.037 14.5619 106.64 11.1895 98.4981C7.81717 90.3565 6.08144 81.6304 6.08144 72.818C6.08144 64.0057 7.81717 55.2796 11.1895 47.138C14.5619 38.9964 19.5048 31.5988 25.7361 25.3675C31.9674 19.1363 39.365 14.1933 47.5066 10.821C55.6481 7.44863 64.3742 5.7129 73.1866 5.7129L73.1866 5.7129Z" stroke="#e4e4f2" stroke-width="4.89873"/>
@@ -81,36 +81,28 @@ if(isset($admin)){
                     </div>
                 </div>
             </div>
-<div class="align-baseline shadow-md rounded-lg">
-        <table class="h-auto text-sm text-left text-gray-500" height="300px">
+<div class="flex justify-center pb-24 align-center shadow-md rounded-lg">
+        <table id="grid" class="h-auto text-sm text-left text-gray-500" height="300px">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3">
                         ID
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        <div class="flex items-center">
-                            Email
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg></a>
-                        </div>
+                    <th scope="col" class="flex-auto px-6 py-3" >
+                        Email                            
+                        <a><svg data-type="string" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg></a>
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        <div class="flex items-center">
+                    <th scope="col" class="flex-auto px-6 py-3">
                             Name
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg></a>
-                        </div>
+                            <a><svg data-type="string" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg></a>
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        <div class="flex items-center">
+                    <th scope="col" class="flex-auto px-6 py-3">
                             Birth
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg></a>
-                        </div>
+                            <a><svg data-type="string" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg></a>
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        <div class="flex items-center">
+                    <th scope="col" class="flex-auto px-6 py-3">
                             Status
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg></a>
-                        </div>
+                            <a><svg data-type="string" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"/></svg></a>
                     </th>
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Buy</span>
@@ -154,24 +146,29 @@ if(isset($admin)){
                     <?php echo $status; ?>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <span user-id='<?php echo $user['id_user'] ;?>' type-action='' class="font-medium text-blue-600 dark:text-blue-500 hover:underline walletuser">See Wallet</span>
+                        <span user-id='<?php echo $user['id_user'] ;?>' type-action='' class="font-medium text-blue-600 dark:text-blue-500 hover:underline walletuser cursor-pointer">See Wallet</span>
                     </td>
                     <td class="px-6 py-4 text-right">
-                        <span user-id='<?php echo $user['id_user'] ;?>' type-action="<?php echo $action; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline deactivateuser"><?php echo ucfirst($action); ?></span>
+                        <span user-id='<?php echo $user['id_user'] ;?>' type-action="<?php echo $action; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline deactivateuser cursor-pointer"><?php echo ucfirst($action); ?></span>
                     </td>
                 </tr>
                 <?php
                 }
                 ?>
             </tbody>
-            <tfoot>
-                <tr class="font-semibold text-gray-900">
+            <tfoot >
+                <tr class="font-semibold text-gray-900 pt-8">
                     <th scope="row" class="px-6 py-3 text-base">Total Users:</th>
                     <td class="px-6 py-3"><?php echo sizeof($users); ?></td>
                 </tr>
             </tfoot>
         </table>
 </div>
+<?php
+include_once BASE_PATH . '/src/templates/components/footer.html';
+
+
+?>
 <script>
 const btnWallet = document.querySelectorAll('.walletuser');
 const btnDeactivate = document.querySelectorAll('.deactivateuser');
