@@ -8,15 +8,44 @@ Use the app here👇<br>
 
 ## Index
 
-- [How to use](#how-to-use)
+- [Previous Settings](#previous-settings)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Authors](#authors)
 
 ## Previous Settings
 
-Here we will teach you how to use 
+Here we will teach you config and install our app in you local desktop.
 
-### Features
+### Settings the path
+
+The file to modify: ./src/controllers/pathControllers.php
+We use two differents type of paths:
+
+#### BASE_URL
+
+Which refers to the relative path where your localhost runs.
+
+You need to after it's indicated, and your route its going to see like:
+
+    define ('BASE_URL', 'http://'.$_SERVER['HTTP_HOST'].'/assembler/develop-your-project-in-php');
+
+#### BASE_PATH
+
+Then you must change the absolute path wich it's going to help when differents files requires others.
+
+You need to fullfill after where it's indicated, and it's going to see like this:
+
+    define ('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/assembler/develop-your-project-in-php');
+
+🤔Reminder: Both dynamic path text need to be the same.
+
+## 📝 Developers
+
+- [**Iuliia Shikhanova**](https://github.com/IuliiaNova)
+- [**Albert Gomis**](https://github.com/AlbertGomisM)
+- [**Ruben Zafra Traver**](https://github.com/RubenZafra) - *Design Manager*
+- [**Valentino Traverso**](https://github.com/valentraverso) - *Project Manager*Features
 
 - EDIT INFORMATION <br>
 In this 
