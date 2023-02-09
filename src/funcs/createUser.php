@@ -1,12 +1,7 @@
 <?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require_once('../controllers/pathControllers.php');
-require_once(BASE_PATH.'/src/controllers/UserController.php');
-require_once(BASE_PATH.'/src/controllers/WalletController.php');
+require_once '../controllers/pathControllers.php';
+require_once BASE_PATH . '/src/controllers/UserController.php';
+require_once BASE_PATH . '/src/controllers/WalletController.php';
 
 $user = new Users();
 
@@ -39,7 +34,6 @@ $lastName = $_POST['last-Name'];
 $favCoin = $_POST['favorite-coin'];
 $status = 1; //0 not active 1 active
 $role = 0; //0 user 1 admin
-
 
 $wallet = new Wallet();
 $wallet->createWallet($idWallet);

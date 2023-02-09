@@ -1,15 +1,9 @@
-
-let amount = document.querySelector("#amount");
-
-let currentPrice = document.querySelector("#currentPrice");
-
-let quantity = document.querySelector("#quantity");
-
-let coins = document.querySelector("#coins");
-
-let coin = document.querySelector("#coin");
-
-let amountPay = document.querySelector("#amountPay");
+const amount = document.querySelector("#amount");
+const currentPrice = document.querySelector("#currentPrice");
+const quantity = document.querySelector("#quantity");
+const coins = document.querySelector("#coins");
+const coin = document.querySelector("#coin");
+const amountPay = document.querySelector("#amountPay");
 
 
 coins.addEventListener('change', (e) => {
@@ -23,24 +17,14 @@ coins.addEventListener('change', (e) => {
     }
 )})
 
-
-
 amount.addEventListener('keyup', logNum);
 
 function logNum(e) {
-
-        amountPay.textContent = amount.value +" €";
-        quantity.textContent = "Quantity: " + (amount.value/globalPrice).toFixed(7);
-
+  amountPay.textContent = amount.value +" €";
+  quantity.textContent = "Quantity: " + (amount.value/globalPrice).toFixed(7);
 }
 
 function confirmation(event){
-    // var opcion = confirm("Are you sure you want to sell?");
-    // if (opcion == true) {
-    //     return true
-	// } else {
-	//     return false
-	// }
     event.preventDefault();
     Swal.fire({
         title: 'Are you sure you want to sell this amount?',
@@ -61,7 +45,6 @@ function confirmation(event){
               fetch()
               document.querySelector("#formSell").submit();
           })
-        //   document.querySelector("#formSell").submit();
         }
       })
 }
