@@ -14,13 +14,12 @@ require_once BASE_PATH . "/src/apiCoin.php";
 
   <form id="formSell" class="m-4 flex" action="../src/funcs/buyCoin.php" method="post">
     	<input id="quantity-money" name="quantity-money" class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" placeholder="100" required/>
-      <?php
+</div>
+<?php
          if(isset($_GET['msg'])){
-                  echo '<br><span class="text-red text-center">No money, no honey! Go to your ' . '<a href="C:\xampp\htdocs\PHP-final\develop-your-project-in-php\user\wallet-user.php">dashboard</a>' . ' and top up your wallet!</span>';
+                  echo '<span class="text-red text-center text-xs">No money, no honey! Go to your ' . '<a href="' . BASE_URL . '/user/wallet-user.php"><b> dashboard</b></a>' . ' and top up your wallet!</span>';
               }
         ?>
-</div>
-
 <!-- select coin -->
 
 <div class="w-80 max-w-2xl mx-auto">

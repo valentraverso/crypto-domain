@@ -45,30 +45,31 @@ if($actualWallet >= $quantity_money && $eurMaster >= $quantity_coin){
     echo $walletRec; 
 
   $transaction = new Coin();
+
   $transaction->createTransaction("0", $walletRec , "1", $quantity_coin, $price); 
 
-  $wallet->updateWallet($coinObjUser, '$.EUR', $actualWallet - $quantity_money, $walletRec); //user: cambia cantidad de eur
+  $wallet->updateWallet($coinObjUser, '$.EUR', $actualWallet - $quantity_money, $walletRec); //user: eur
 
-  $walletUser = $wallet->getWallet("WHERE id_user=$walletRec"); // usuario
+  $walletUser = $wallet->getWallet("WHERE id_user=$walletRec"); 
   $coinObjUser = $walletUser['json_coins'];
   $idWalletUser = $walletUser['id_wallet'];
   $walletCoins = (json_decode($coinObjUser,true)[$selected_coin]);
 
-  $wallet->updateWallet($coinObjUser, '$.'.$selected_coin.'', $walletCoins+$quantity_coin, $walletRec); //user: cambia cantidad de coin
+  $wallet->updateWallet($coinObjUser, '$.'.$selected_coin.'', $walletCoins+$quantity_coin, $walletRec); //user: coin
 
   $walletAdmin = $wallet->getWallet("WHERE id_user=0"); 
   $coinObjAdmin = $walletAdmin['json_coins'];
   $idWalletAdmin = $walletUser['id_wallet'];
   $eurMaster = (json_decode($coinObjAdmin, true)["EUR"]); 
 
-  $wallet->updateWallet($coinObjAdmin, '$.EUR', $eurMaster + $quantity_money, 0); //admin: cambia cantidad de eur
+  $wallet->updateWallet($coinObjAdmin, '$.EUR', $eurMaster + $quantity_money, 0); //admin: eur
 
   $walletAdmin = $wallet->getWallet("WHERE id_user=0"); 
   $coinObjAdmin = $walletAdmin['json_coins'];
   $idWalletAdmin = $walletUser['id_wallet'];
   $coinMaster = (json_decode($coinObjAdmin,true)[$selected_coin]);
 
-  $wallet->updateWallet($coinObjAdmin, '$.'.$selected_coin.'', $coinMaster-$quantity_coin, 0); //admin: cambia cantidad de coin
+  $wallet->updateWallet($coinObjAdmin, '$.'.$selected_coin.'', $coinMaster-$quantity_coin, 0); //admin: coin
 
    header("Location: ../../user/wallet-user.php");  
 
@@ -77,5 +78,5 @@ if($actualWallet >= $quantity_money && $eurMaster >= $quantity_coin){
     die();
 }
 } 
-//if($actualWallet <= $quantity_money)
+
 ?>
