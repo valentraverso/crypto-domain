@@ -12,7 +12,7 @@
             </div>
             <div>
               <div class="mt-10">
-                <a href="<?php echo BASE_URL.'/user/sign-up.php'; ?>" class="inline-block rounded-md border border-transparent bg-yellow py-3 px-8 text-center text-gray font-medium hover:bg-maroon hover:text-white">Create Account</a>
+                <a href="<?php echo BASE_URL.'/user/sign-up.php'; ?>" class="opacity-80 inline-block rounded-md border border-transparent bg-yellow py-3 px-8 text-center text-gray font-medium hover:bg-maroon hover:text-white transition">Create Account</a>
               </div>
             </div>
           </div>
