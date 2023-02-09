@@ -42,7 +42,7 @@ You need to fullfill after where it's indicated, and it's going to see like this
 
 ## Features
 
-- EDIT INFORMATION <br>
+- ###EDIT INFORMATION <br>
 In this 
 - WALLET <br>
 In your "Dashboard" you can check how much money you have as well as how much of the different crypto coins you have. There's a dynamic doughnut chart and also a regultar dynamic chart that updates every time you refresh the site. 
