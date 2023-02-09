@@ -12,22 +12,37 @@ function getCoins(){
     })
 }
 
+const actualCoin = {};
+
 function showCoins(data){
+    inputAmountSent.value = '';
+
     const spanQuantity = document.querySelector('#quantityWallet');
     
     const valueSelectCoins = selectCoins.value;
+
+    actualCoin.name = data[valueSelectCoins];
     
     spanQuantity.textContent  = 'You have ' + data[valueSelectCoins] + ' ' + valueSelectCoins;
 }
 
-function showTotal(){
+function showTotal(e){
     const spanTotal = document.querySelector('#amountPay');
 
     const valueSelectCoins = selectCoins.value;
     const valueInputAmount = inputAmountSent.value;
 
-    spanTotal.textContent =  valueInputAmount + ' ' + valueSelectCoins;
+    const coinsName = 'BTCETHLUNDOGE';
+
+    if(coinsName.includes(valueSelectCoins)){
+        spanTotal.textContent =  valueInputAmount + ' ' + valueSelectCoins;  
+    }else{
+        e.preventDefault();
+    } 
+
+
 }
 
 selectCoins.addEventListener('change', getCoins);
+inputAmountSent.addEventListener('keydown', showTotal);
 inputAmountSent.addEventListener('keyup', showTotal);
