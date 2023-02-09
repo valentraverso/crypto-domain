@@ -5,6 +5,10 @@ const coins = document.querySelector("#coins");
 const coin = document.querySelector("#coin");
 const amountPay = document.querySelector("#amountPay");
 const img = document.querySelector("#img");
+const btnFormSell = document.querySelector("#btnFormSell");
+const coinavAilable = document.querySelector("#coinavAilable");
+
+btnFormSell.disabled = true;
 
 coins.addEventListener('change', (e) => {
     moneda = coin.textContent=e.target.value;
@@ -17,17 +21,34 @@ coins.addEventListener('change', (e) => {
         window.globalPrice = data["EUR"];
     }
 )
+// coinavAilable.textContent = "You have "+getCoins()+" "+moneda;
+countCoins1();
 })
 
 
 
 amount.addEventListener('keyup', logNum);
+amount.addEventListener('keydown', logNum);
 
 function logNum(e) {
+  const coinsName = 'BTCETHLUNDOGE';
+
+    if(!coinsName.includes(coins.value)){
+        e.preventDefault();
+        return
+    }
   amountPay.textContent = amount.value +" €";
   quantity.textContent = "Quantity: " + (amount.value/globalPrice).toFixed(7);
-  console.log("hola")
-
+  // console.log(compareCoins())
+  if ((compareCoins()*globalPrice)>=amount.value){
+    countCoins2();
+    coinavAilable.className = "text-black";
+    btnFormSell.disabled = false;
+  } else{
+    coinavAilable.textContent = "You do not have enough "+moneda+". Sorry baby!"
+    coinavAilable.className = "text-red-600";
+    btnFormSell.disabled = true;
+  }
 }
 
 
@@ -57,14 +78,32 @@ function confirmation(event){
       })
 }
 
-// function getCoins(){
-//   fetch('../src/funcs/getCoinsUser.php')
-//   .then(response => response.json())
-//   .then(data => {
-//       console.log(data[coin.textContent]);
-//   })
-// }
+function countCoins1(){
+  fetch('../src/funcs/getCoinsUser.php')
+  .then(response => response.json())
+  .then(data => {
+    coinavAilable.textContent = "You have "+data[coins.value]+ " "+moneda;
+  })
+}
 
+function countCoins2(){
+  fetch('../src/funcs/getCoinsUser.php')
+  .then(response => response.json())
+  .then(data => {
+    coinavAilable.textContent = "You have "+data[coins.value]+ " "+moneda+ " = €"+ (data[coins.value]*globalPrice).toFixed(4);
+  })
+}
+
+let totalCoin;
+
+function compareCoins(){
+  fetch('../src/funcs/getCoinsUser.php')
+  .then(response => response.json())
+  .then(data => {
+    totalCoin =data[coins.value];
+  })
+  return totalCoin;
+}
 // getCoins();
 
 // console.log(moneda)
