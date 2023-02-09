@@ -36,16 +36,11 @@ Then you must change the absolute path wich it's going to help when differents f
 
 You need to fullfill after where it's indicated, and it's going to see like this:
 
-    define ('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/assembler/develop-your-project-in-php');
+    <pre>define ('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/assembler/develop-your-project-in-php');</pre>
 
 🤔Reminder: Both dynamic path text need to be the same.
 
-## 📝 Developers
-
-- [**Iuliia Shikhanova**](https://github.com/IuliiaNova)
-- [**Albert Gomis**](https://github.com/AlbertGomisM)
-- [**Ruben Zafra Traver**](https://github.com/RubenZafra) - *Design Manager*
-- [**Valentino Traverso**](https://github.com/valentraverso) - *Project Manager*Features
+## Features
 
 - EDIT INFORMATION <br>
 In this 
@@ -77,3 +72,10 @@ In this page you can transfer any cryto currency to any user in the website.
 \* JSON
 
 \* API
+
+## 📝 Developers
+
+- [**Iuliia Shikhanova**](https://github.com/IuliiaNova)
+- [**Albert Gomis**](https://github.com/AlbertGomisM)
+- [**Ruben Zafra Traver**](https://github.com/RubenZafra) - *Design Manager*
+- [**Valentino Traverso**](https://github.com/valentraverso) - *Project Manager*Features
