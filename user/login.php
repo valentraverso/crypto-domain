@@ -2,7 +2,11 @@
 require_once '../src/controllers/pathControllers.php';
 
 session_start();
-require_once BASE_PATH.'/src/funcs/userLoginConfirmation.php';
+if(isset($_SESSION['id_user'])){
+  echo 'sesion iniciada';
+  header('location:'.BASE_URL);
+  die();
+}
 
 $pageTitle = 'Log into your account - Crypto Domain';
 
