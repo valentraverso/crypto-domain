@@ -1,11 +1,6 @@
-// Burger menus
 document.addEventListener('DOMContentLoaded', function() {
-    // open
     const burger = document.querySelectorAll('.navbar-burger');
     const menu = document.querySelectorAll('.navbar-menu');
-
-    console.log(burger)
-
 
     for (var i = 0; i < burger.length; i++) {
         burger[i].addEventListener('click', function() {
@@ -14,9 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             });
         }
-    
 
-    // close
     const close = document.querySelectorAll('.navbar-close');
     const backdrop = document.querySelectorAll('.navbar-backdrop');
 
@@ -29,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-
     if (backdrop.length) {
         for (var i = 0; i < backdrop.length; i++) {
             backdrop[i].addEventListener('click', function() {

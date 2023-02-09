@@ -1,16 +1,13 @@
 <?php
 session_start();
-
 $pageTitle = 'Admin Home';
 
 require_once '../src/controllers/pathControllers.php';
 require_once BASE_PATH.'/src/controllers/UserController.php';
 include_once BASE_PATH . '/src/templates/components/navbarLogin.php';
-
 require_once BASE_PATH.'/src/templates/components/head.php';
 
 $user = new Users();
-
 $admin = $user->readUserData("WHERE id_user = ". $_SESSION['id_user']." AND ROLE = 1");
 
 if(isset($admin)){
@@ -36,11 +33,8 @@ if(isset($admin)){
 
     $walletAdmin = $wallet->getWallet("WHERE id_wallet = 0");
     $objWallet = json_decode($walletAdmin['json_coins']);
-
     $getCotizacion = $coins->setCoin("BTC,ETH,LUN,DOGE", "EUR");
-
     $totales = $wallet->getTotales($getCotizacion, $objWallet);
-
     $users = $admin->getAllUsers();
     ?>
     <div class="md:col-span-2 lg:col-span-1 mb-24" >
@@ -81,7 +75,7 @@ if(isset($admin)){
                     </div>
                 </div>
             </div>
-<div class="flex justify-center pb-24 align-center shadow-md rounded-lg">
+    <div class="flex justify-center pb-24 align-center shadow-md rounded-lg">
         <table id="grid" class="h-auto text-sm text-left text-gray-500" height="300px">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
@@ -114,7 +108,6 @@ if(isset($admin)){
             </thead>
             <tbody>
                 <?php
-
                 foreach($users as $user){
 
                     switch($user['status']){
@@ -127,8 +120,7 @@ if(isset($admin)){
                             $action = 'deactivate';
                             break;
                     }
-                    ?>
-                    
+                    ?>                    
                 <tr class="bg-white border-b">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                         <?php echo $user['id_user']; ?>
@@ -137,7 +129,7 @@ if(isset($admin)){
                     <?php echo $user['email']; ?>
                     </td>
                     <td class="px-6 py-4">
-                    <?php echo $user['first_name'] . " "  . $user['last_name']; ?>
+                    <?php echo $user['first_name'] . " " . $user['last_name']; ?>
                     </td>
                     <td class="px-6 py-4">
                     <?php echo $user['birth_date']; ?>
@@ -166,8 +158,6 @@ if(isset($admin)){
 </div>
 <?php
 include_once BASE_PATH . '/src/templates/components/footer.html';
-
-
 ?>
 <script>
 const btnWallet = document.querySelectorAll('.walletuser');
@@ -187,7 +177,6 @@ function getTotalUser(e){
    )
     })
 }
-
 function deactivateUser(e){
     const idUser = e.currentTarget.getAttribute('user-id');
     const action = e.currentTarget.getAttribute('type-action');
@@ -197,16 +186,14 @@ function deactivateUser(e){
         window.location.reload();
     })
 }
-
 btnWallet.forEach(item => {
     item.addEventListener('click', getTotalUser)
 });
-
 btnDeactivate.forEach(item => {
     item.addEventListener('click', deactivateUser)
 });
 </script>
     <?php
-}else{
+} else {
     header("location: ../");
 }
