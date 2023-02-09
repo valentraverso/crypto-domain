@@ -36,25 +36,38 @@ Then you must change the absolute path wich it's going to help when differents f
 
 You need to fullfill after where it's indicated, and it's going to see like this:
 
-    <pre>define ('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/assembler/develop-your-project-in-php');</pre>
+    define ('BASE_PATH', $_SERVER['DOCUMENT_ROOT'].'/assembler/develop-your-project-in-php');
 
 🤔Reminder: Both dynamic path text need to be the same.
 
 ## Features
-
-- EDIT INFORMATION <br>
-In this 
-- WALLET <br>
-In your "Dashboard" you can check how much money you have as well as how much of the different crypto coins you have. There's a dynamic doughnut chart and also a regultar dynamic chart that updates every time you refresh the site. 
-- ADD FUNDS <br>
-- BUY <br>
+<img src="img/readme/mainPage.png">
+- LOG IN / SIGN UP <br><br>
+This is where you can Log in and Sign up. You must be 18+ and only one email. There can't be 2 users with the same email.
+<img src="img/readme/login.png">
+<img src="img/readme/signUpPage.png">
+- EDIT INFORMATION <br><br>
+In this page you can change the value of your First and Last Name. It get stored in the DB.
+<img src="img/readme/editPage.png">
+- WALLET <br><br>
+In your "Dashboard" you can check how much money you have as well as how much of the different crypto coins you have. There's a dynamic doughnut chart and also a regultar dynamic chart that updates every time you refresh the site. <br>
+You can also add funds.
+<img src="img/readme/dynamicDougnut.png">
+<img src="img/readme/dynamicChart.png">
+- BUY <br><br>
 Here you can buy all the different crypto coins with your funds. There's validations if you don't have enough funds and confirmation popups. 
-- SELL <br>
+<img src="img/readme/buyPage.png">
+- SELL <br><br>
 Here you can sell to the "Admin" all the different crypto currencies you have and funds are added directly into your account.
-- TRANSFER <br>
+<img src="img/readme/sellPage.png">
+- TRANSFER <br><br>
 In this page you can transfer any cryto currency to any user in the website. 
-- ADMIN <br>
-
+<img src="img/readme/transferPage.png">
+- ADMIN <br><br>
+This is the page where the admin lives. He can see all wallets, deativate users, total balance of the admin wallet as well as all user details.
+<img src="img/readme/adminPage.png">
+<br>
+<br>
 ### Technologies used
 
 \* HTML

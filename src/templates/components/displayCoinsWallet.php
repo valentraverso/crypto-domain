@@ -175,9 +175,9 @@ new Chart(document.getElementById("doughnut-chart"), {
       labels: ["BTC", "ETH", "DOGE", "LUN"],
       datasets: [
         {
-          label: "Coin Amount",
+          label: "€ Amount",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
-          data: [coinAmount.BTC,coinAmount.ETH,coinAmount.DOGE,coinAmount.LUN]
+          data: [<?php echo $priceBTC * $jsonEncode->BTC?>,<?php echo $priceETH * $jsonEncode->ETH?>,<?php echo $priceDOGE * $jsonEncode->DOGE?>,<?php echo $priceLUN * $jsonEncode->LUN?>]
         }
       ]
     },
