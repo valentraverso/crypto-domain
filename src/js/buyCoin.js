@@ -15,7 +15,6 @@ function chooseCoin(){
     let selectOptionValue = selectOptionCoin.value;
     let nameCoin = document.getElementById("name-coin");
     nameCoin.innerHTML = selectOptionValue;
-
     currentPrice();
 }
 
@@ -46,11 +45,16 @@ function quantityCoins(priceCoin, inputValue){
 const btnBuy = document.getElementById("btnBuy"); 
 btnBuy.addEventListener("click", confirmPurchase);
 
+
 function confirmPurchase(event){
     const putMoney = document.getElementById("quantity-money");
     const selectCoin = document.getElementById("coins");
 
- if(putMoney.value && selectCoin.value){
+    fetch('../src/funcs/getCoinsUser.php')
+    .then(response => response.json())
+    .then(data => {
+
+ if(putMoney.value<=data.EUR && selectCoin.value){
     event.preventDefault();
     Swal.fire({
         title: 'Buy coins',
@@ -69,7 +73,7 @@ function confirmPurchase(event){
             'success'
           ).then((res)=>{
             if (res.isConfirmed){
-                document.querySelector("#formSell").submit();;
+                //document.querySelector("#formSell").submit();;
         }})}else{
             event.preventDefault();
             Swal.fire(
@@ -77,9 +81,13 @@ function confirmPurchase(event){
                 'Your purchase was canceled.',
                 'success').then((res)=>{
                     if (res.isConfirmed){
-                document.querySelector("#formSell").submit();;
-            }})
+               // document.querySelector("#formSell").submit(); 
+            }}
+            )
         }
       })
  }
+
+})
+
 }
