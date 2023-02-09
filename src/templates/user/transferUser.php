@@ -9,13 +9,13 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 <div class="w-80 max-w-2xl mx-auto">
 <form action="<?php echo BASE_URL .'/src/funcs/sell.php';?>" id="formSell">
 	<label for="coins" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select the coin for sell</label>
-        <select id="coins" name="coin" class="bg-yellow border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-purple dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
-        <option disabled selected>Choose from your wallet</option>
-        <option value="BTC">Bitcoin</option>
-        <option value="ETH">Ethereum</option>
-        <option value="LUN">Luna</option>
-        <option value="DOGE">Doge Coin</option>
-        </select>
+    <select id="coins" name="coin" class="bg-yellow border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-purple dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
+      <option disabled selected>Choose from your wallet</option>
+      <option value="BTC">Bitcoin</option>
+      <option value="ETH">Ethereum</option>
+      <option value="LUN">Luna</option>
+      <option value="DOGE">Doge Coin</option>
+    </select>
 </div>
 <!-- select quantity money -->
 <div class="max-w-2xl mx-auto">
@@ -35,10 +35,10 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
         <div class="flex justify-between">
           <p class="text-lg font-bold">Total</p>
           <div class="">
-            <p class="mb-1 text-lg font-bold" id="amountPay">€ </p>
+            <p class="mb-1 text-lg font-bold" id="amountPay"></p>
           </div>
         </div>
-        <button type="submit" class="mt-6 w-full rounded-md bg-purple py-1.5 font-medium text-blue-50 hover:bg-maroon" id="formSell">Transfer</button>
+        <button type="submit" class="mt-6 w-full rounded-md bg-purple py-1.5 font-medium text-blue-50 hover:bg-maroon" id="btnTransfer">Transfer</button>
       </div>
       </form>
     </div>
