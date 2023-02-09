@@ -2,7 +2,7 @@
 include BASE_PATH.'/src/templates/components/head.php';
 include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 ?>
-<script src="<?php echo BASE_URL ;?>/src/js/sell.js" defer></script>
+<script src="<?php echo BASE_URL ;?>/src/js/sell.js" defer ></script>
 <script src ="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
 <div class="h-fit bg-gray-100 pt-20 grid">
     <h1 class="mb-10 text-center text-2xl font-bold">Sell criptos</h1>
@@ -21,7 +21,7 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 <!-- select coin -->
 
 <div class="w-80 max-w-2xl mx-auto">
-<form action="<?php echo BASE_URL .'/src/funcs/sell.php';?>" id="formSell">
+<form action="<?php echo BASE_URL .'/src/funcs/sell.php';?>" method="post" id="formSell">
 	<label for="coins" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select the coin for sell</label>
         <select id="coins" name="coin" class="bg-yellow border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-purple dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
         <option selected>Choose from your wallet</option>

@@ -6,9 +6,6 @@ const coin = document.querySelector("#coin");
 const amountPay = document.querySelector("#amountPay");
 const img = document.querySelector("#img");
 
-console.log("hola");
-
-
 coins.addEventListener('change', (e) => {
     moneda = coin.textContent=e.target.value;
     img.src="../img/"+e.target.value+".png";
@@ -19,14 +16,21 @@ coins.addEventListener('change', (e) => {
         amountPay.textContent = amount.value +" €";
         window.globalPrice = data["EUR"];
     }
-)})
+)
+})
+
+
 
 amount.addEventListener('keyup', logNum);
 
 function logNum(e) {
   amountPay.textContent = amount.value +" €";
   quantity.textContent = "Quantity: " + (amount.value/globalPrice).toFixed(7);
+  console.log("hola")
+
 }
+
+
 
 function confirmation(event){
     event.preventDefault();
@@ -53,3 +57,14 @@ function confirmation(event){
       })
 }
 
+// function getCoins(){
+//   fetch('../src/funcs/getCoinsUser.php')
+//   .then(response => response.json())
+//   .then(data => {
+//       console.log(data[coin.textContent]);
+//   })
+// }
+
+// getCoins();
+
+// console.log(moneda)

@@ -7,8 +7,8 @@ require_once(BASE_PATH.'/src/controllers/WalletController.php');
 session_start();
 $idUser = $_SESSION["id_user"];
 
-$coin = $_GET["coin"];
-$amount = $_GET["amount"];
+$coin = $_POST["coin"];
+$amount = $_POST["amount"];
 
 $showCoin = new Coins();
 $price = $showCoin->setCoin($coin, "EUR")["RAW"][$coin]["EUR"]["PRICE"];
