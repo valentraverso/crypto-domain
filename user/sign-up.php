@@ -1,9 +1,9 @@
 <?php
 require_once '../src/controllers/pathControllers.php';
+
 session_start();
-if(isset($_SESSION['id_user'])){
-  header('Location: ../');
-} 
+require_once BASE_PATH.'/src/funcs/userLoginConfirmation.php';
+
 $pageTitle = 'Create an account - Crypto Domain';
 
 // Actual view
