@@ -4,10 +4,14 @@ const quantity = document.querySelector("#quantity");
 const coins = document.querySelector("#coins");
 const coin = document.querySelector("#coin");
 const amountPay = document.querySelector("#amountPay");
+const img = document.querySelector("#img");
+
+console.log("hola");
 
 
 coins.addEventListener('change', (e) => {
     moneda = coin.textContent=e.target.value;
+    img.src="../img/"+e.target.value+".png";
     fetch('https://min-api.cryptocompare.com/data/price?fsym='+e.target.value+'&tsyms=EUR&api_key=897076d9099dc0fb454eba5610052b06fd3edc1746963be7b5a11ee40138db8d')
         .then((response) => response.json())
         .then((data) => {currentPrice.textContent = "Current Price: " + data["EUR"] +" €";

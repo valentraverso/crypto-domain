@@ -4,8 +4,19 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 ?>
 <script src="<?php echo BASE_URL ;?>/src/js/sell.js" defer></script>
 <script src ="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
-<div class="h-screen bg-gray-100 pt-20 grid">
+<div class="h-fit bg-gray-100 pt-20 grid">
     <h1 class="mb-10 text-center text-2xl font-bold">Sell criptos</h1>
+<?php
+ if(isset($_GET['money'])){
+  switch($_GET['money']){
+      case 'noMoney':
+        echo '<p class="text-red text-center">You have not enough crypto or <br>there is not enough money in the market.<br>
+        Sorry baby!</p><br>';
+        echo '<p class = "text-black text-center">Click <a class="text-sky-600" href= "wallet-user.php">HERE</a> to add more funds</p><br><br>';
+          break;
+      } 
+}
+?>
 
 <!-- select coin -->
 
@@ -40,7 +51,7 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
     <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
       <div class="rounded-lg">
         <div class="justify-between mt-6 mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-          <img src="../img/coin.png" alt="product-image" class="w-full rounded-lg sm:w-40" />
+          <img src="../img/BTC.png" alt="product-image" class="w-full rounded-lg w-8 sm:w-40" id="img"/>
           <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
             <div class="mt-5 sm:mt-0">
               <h2 class="text-lg font-bold text-gray-900" id="coin">Bitcoin</h2>
@@ -59,21 +70,11 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
           </div>
         </div>
         <button type="submit" class="mt-6 w-full rounded-md bg-purple py-1.5 font-medium text-blue-50 hover:bg-maroon" id="formSell" onclick="confirmation(event)">Sell it</button>
-  <?php
-   if(isset($_GET['money'])){
-    switch($_GET['money']){
-        case 'noMoney':
-          echo '<p class="text-red text-center">You have not enough crypto or <br>there is not enough money in the market.<br>
-          Sorry baby!</p><br>';
-          echo '<p class = "text-black text-center">Click <a class="text-sky-600" href= "wallet-user.php">HERE</a> to add more funds</p>';
-            break;
-        } 
-  }
-  ?>
       </div>
       </form>
     </div>
   </div>
+</div>
   <?php
     include_once BASE_PATH.'/src/templates/components/footer.html';
 ?>
