@@ -10,4 +10,8 @@ Use the app here👇<br>
 
 - [How to use](#how-to-use)
 
-## How to use
+## Previous Settings
+
+Here we will teach you how to use 
+
+### 
