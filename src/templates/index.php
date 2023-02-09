@@ -3,7 +3,7 @@
         include BASE_PATH.'/src/templates/components/navbar.php';
 ?>
 <main>
-    <div class="relative overflow-hidden bg-white opacity-70">
+    <div class="relative overflow-hidden bg-white">
         <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
           <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div class="sm:max-w-lg">
@@ -12,7 +12,7 @@
             </div>
             <div>
               <div class="mt-10">
-                <a href="<?php echo BASE_URL.'/user/sign-up.php'; ?>" class="opacity-70 inline-block rounded-md border border-transparent bg-yellow py-3 px-8 text-center text-gray font-medium hover:bg-maroon hover:text-white">Create Account</a>
+                <a href="<?php echo BASE_URL.'/user/sign-up.php'; ?>" class="opacity-80 inline-block rounded-md border border-transparent bg-yellow py-3 px-8 text-center text-gray font-medium hover:bg-maroon hover:text-white transition">Create Account</a>
               </div>
             </div>
           </div>

@@ -15,7 +15,5 @@ class Transaction extends Connection {
         $createQuery->bindParam(':cotization', $cotization);
         $createQuery->execute();
     } 
-
 }
-
 ?>

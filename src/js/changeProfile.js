@@ -1,10 +1,8 @@
 const btnSubmit = document.querySelector('#btnSubmitChanges');
 const btnDeleteUser = document.querySelector('#btnDeleteUser');
 
-
 function submitForm(e) {
     e.preventDefault();
-
     Swal.fire({
         title: 'Do you want to save the changes?',
         showDenyButton: true,
@@ -25,7 +23,6 @@ function submitForm(e) {
         }
     })
 }
-
 function deleteUser(){
     Swal.fire({
         title: 'Are you sure you want to delete your account?',
@@ -47,6 +44,5 @@ function deleteUser(){
         }
     })
 }
-
 btnSubmit.addEventListener('click', submitForm);
 btnDeleteUser.addEventListener('click', deleteUser);
