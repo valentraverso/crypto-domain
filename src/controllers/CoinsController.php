@@ -1,5 +1,6 @@
 <?php
-require 'C:\xampp\htdocs\PHP-final\develop-your-project-in-php\src\controllers\DbConnection.php';
+require_once  BASE_PATH.'/src/controllers/DbConnection.php';
+
 class Coin extends Connection{
 
     public function getCoins(){
