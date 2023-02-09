@@ -1,7 +1,7 @@
 `#html` `#CSS` `#PHP` `#Javascript` `#JSON` `#API` `#MySQL` `#Xampp` `#TailWind` `#ChartJS` `#FlowBite` `#Crypto`
 # ｛Crypto Domain SSL｝💸 💶
 
-The fastest way to buy, sell and transfer criptocoins in the Web 3.0!
+The fastest way to buy, sell and transfer criptocoins on the Web 3.0!
 
 Use the app here👇<br>
 [Deploy]()
