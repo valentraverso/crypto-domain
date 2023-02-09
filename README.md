@@ -46,23 +46,29 @@ You need to fullfill after where it's indicated, and it's going to see like this
 This is where you can Log in and Sign up. You must be 18+ and only one email. There can't be 2 users with the same email.<br><br>
 <img src="img/readme/login.png"><br>
 <img src="img/readme/signUpPage.png"><br><br>
+
 - EDIT INFORMATION <br><br>
 In this page you can change the value of your First and Last Name. It get stored in the DB.<br><br>
-<img src="img/readme/editPage.png">
+<img src="img/readme/editPage.png"><br><br>
+
 - WALLET <br><br>
 In your "Dashboard" you can check how much money you have as well as how much of the different crypto coins you have. There's a dynamic doughnut chart and also a regultar dynamic chart that updates every time you refresh the site. <br>
 You can also add funds.<br><br>
 <img src="img/readme/dynamicDoughnut.png"><br>
 <img src="img/readme/dynamicChart.png"><br><br>
+
 - BUY <br><br>
 Here you can buy all the different crypto coins with your funds. There's validations if you don't have enough funds and confirmation popups. <br><br>
 <img src="img/readme/buyPage.png"><br><br>
+
 - SELL <br><br>
 Here you can sell to the "Admin" all the different crypto currencies you have and funds are added directly into your account.<br><br>
 <img src="img/readme/sellPage.png"><br><br>
+
 - TRANSFER <br><br>
 In this page you can transfer any cryto currency to any user in the website. <br><br>
 <img src="img/readme/transferPage.png"><br><br>
+
 - ADMIN <br><br>
 This is the page where the admin lives. He can see all wallets, deativate users, total balance of the admin wallet as well as all user details.<br><br>
 <img src="img/readme/adminPage.png">
