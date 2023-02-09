@@ -12,6 +12,17 @@ Use the app here👇<br>
 
 ## Previous Settings
 
-Here we will teach you how to use 
+Here we will teach you config and install our app in you local desktop.
 
-### 
+### Settings the path
+
+The file to modify: ./src/controllers/pathControllers.php
+We use two differents type of paths:
+
+#### BASE_URL
+
+Which refers to the relative path where your localhost runs.
+
+You need to after it's indicated, and your route its going to see like:
+
+    define ('BASE_URL', 'http://'.$_SERVER['HTTP_HOST'].'/assembler/develop-your-project-in-php');
