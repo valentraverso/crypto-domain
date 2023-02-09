@@ -15,7 +15,7 @@ $userData = $user->readUserData("WHERE id_user='$idUser'");
 ?>
 <div class="flex items-center justify-center p-12">
   <div class="mx-auto w-full max-w-[550px]">
-    <form action="<?php echo BASE_URL . '/src/funcs/updateUser.php';?>" method="POST">
+    <form id="formChangeUser" action="<?php echo BASE_URL . '/src/funcs/updateUser.php';?>" method="POST">
         <div class="flex space-y-5 flex-col items-center py-7">
             <img class="h-28 w-28 rounded-full" src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe"
                 alt="User">
@@ -88,12 +88,12 @@ $userData = $user->readUserData("WHERE id_user='$idUser'");
       </div>
       <div>
         <a
-          class="hover:shadow-form rounded-md bg-red-500 py-3 px-8 text-base font-semibold text-white outline-none" href="<?php echo BASE_URL . "/src/funcs/disactivateUser.php"; ?>">
+          class="hover:shadow-form rounded-md bg-red-500 py-3 px-8 text-base font-semibold text-white outline-none" id="btnDeleteUser">
           Delete
 </a>
         
         <button
-          class="hover:shadow-form rounded-md bg-[#6A64F1] ml-5 py-3 px-7 text-base font-semibold text-white outline-none">
+          class="hover:shadow-form rounded-md bg-[#6A64F1] ml-5 py-3 px-7 text-base font-semibold text-white outline-none" id="btnSubmitChanges">
           Submit
         </button>
         
@@ -104,4 +104,5 @@ $userData = $user->readUserData("WHERE id_user='$idUser'");
 <?php
     include_once BASE_PATH.'/src/templates/components/footer.html';
 ?>
-<script src="../src/js/navbar.js"></script>
+<script src="<?php echo BASE_URL;?>/src/js/changeProfile.js"></script>
+<script src="<?php echo BASE_URL;?>/src/js/navbar.js"></script>
