@@ -32,7 +32,6 @@ function showCoins(data){
     
     spanQuantity.textContent  = 'You have ' + data[valueSelectCoins] + ' ' + valueSelectCoins;
 }
-
 function showTotal(e){
     const spanTotal = document.querySelector('#amountPay');
 
@@ -54,10 +53,8 @@ function showTotal(e){
         pMsgError.textContent = '';
         coinsValidation.quantity = true;
     }
-
     validationForm();
 }
-
 function validateEmail(){
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -68,7 +65,6 @@ function validateEmail(){
         coinsValidation.email = false;
         pMsgError.textContent = 'Enter a valid email.';
     }
-
     validationForm();
 }
 

@@ -1,7 +1,6 @@
 <?php
 // CRUD
 require_once BASE_PATH.'/src/controllers/DbConnection.php';
-
 class Users extends Connection{
     // CREATE
     public function createUser($idWallet, $email, $password, $firstName, $lastName, $birthDate, $favCoin, $status, $role){         
@@ -20,7 +19,6 @@ class Users extends Connection{
         $createQuery->bindParam(':role', $role);
         $createQuery->execute();
     }   
-
     // READ
     public function readUserData($queryExtend){
         $sqlQuery = $this->con->prepare("SELECT * FROM users $queryExtend");
@@ -38,19 +36,18 @@ class Users extends Connection{
         $updateSqlQuery->bindParam(':idUser', $idUser);
         $updateSqlQuery->execute();
     }
-
+    // ACTIVATE
     public function activateUser($idUser){
         $activateUser = $this->con->prepare("UPDATE users SET status = 1 WHERE id_user=:idUser");
         $activateUser->bindParam(':idUser', $idUser);
         $activateUser->execute();
     }
-
+    // DEACTIVATE
     public function disactivateUser($idUser){
         $disactivateUser = $this->con->prepare("UPDATE users SET status = 0 WHERE id_user=:idUser");
         $disactivateUser->bindParam(':idUser', $idUser);
         $disactivateUser->execute();
     }   
-
     // DELETE
     public function deleteUser($idUser){
         $deleteSqlQuery = $this->con->prepare("DELETE FROM users WHERE id_user=:idUser");
