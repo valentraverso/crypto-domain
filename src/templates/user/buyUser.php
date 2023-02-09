@@ -7,7 +7,6 @@ require_once BASE_PATH . "/src/apiCoin.php";
 ?>
 <div class="h-screen bg-gray-100 pt-20 grid">
     <h1 class="mb-10 text-center text-2xl font-bold">Buy criptos</h1>
-
 <!-- select quantity money -->
 <div class="max-w-2xl mx-auto">
   <p class="ml-4 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">How much do you want to buy in € (EUR)?</p>
@@ -21,7 +20,6 @@ require_once BASE_PATH . "/src/apiCoin.php";
               }
         ?>
 <!-- select coin -->
-
 <div class="w-80 max-w-2xl mx-auto">
 	<label for="coins" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select an option</label>
         <select name="select-coin" id="coins" class="bg-yellow mb-4 border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-purple dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
@@ -31,9 +29,7 @@ require_once BASE_PATH . "/src/apiCoin.php";
         <option value="LUN">LUN</option>
         <option value="DOGE">DOGE</option>
     </select>
-	<script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 </div>
-
 <!-- resumen -->
     <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
       <div class="rounded-lg">

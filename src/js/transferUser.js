@@ -63,6 +63,7 @@ function validateEmail(){
 
     if(inputEmailUser.value.match(mailformat)){
         coinsValidation.email = true;
+        pMsgError.textContent = '';
     }else{
         coinsValidation.email = false;
         pMsgError.textContent = 'Enter a valid email.';

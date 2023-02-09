@@ -3,8 +3,10 @@ require_once '../src/controllers/pathControllers.php';
 
 session_start();
 if(isset($_SESSION['id_user'])){
-  header('Location: ../');
-} 
+  echo 'sesion iniciada';
+  header('location:'.BASE_URL);
+  die();
+}
 
 $pageTitle = 'Log into your account - Crypto Domain';
 

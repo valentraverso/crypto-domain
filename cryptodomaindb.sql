@@ -24,6 +24,8 @@ SET time_zone = "+00:00";
 CREATE DATABASE cryptodomaindb;
 use cryptodomaindb;
 
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `coins`
 --
@@ -46,10 +48,24 @@ CREATE TABLE `transactions` (
   `id_trans` int(11) NOT NULL,
   `id_wallet_send` int(4) NOT NULL,
   `id_wallet_recieve` int(4) NOT NULL,
-  `id_coin` int(4) NOT NULL,
-  `coin_q` int(10) NOT NULL,
-  `cotization` int(10) NOT NULL
+  `id_coin` varchar(4) NOT NULL,
+  `coin_q` float NOT NULL,
+  `cotization` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`id_trans`, `id_wallet_send`, `id_wallet_recieve`, `id_coin`, `coin_q`, `cotization`) VALUES
+(1, 11, 11, 'BTC', 1, 21127),
+(2, 11, 11, 'BTC', 1, 21123.1),
+(3, 0, 11, 'BTC', 1, 21107.6),
+(4, 8, 11, 'BTC', 1, 21105.5),
+(5, 11, 11, 'BTC', 1, 21093.5),
+(6, 11, 11, 'BTC', 1, 21096.1),
+(7, 11, 11, 'BTC', 0.1, 21102),
+(8, 8, 11, 'BTC', 0.1, 21106.1);
 
 -- --------------------------------------------------------
 
@@ -76,8 +92,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `id_wallet`, `email`, `password`, `first_name`, `last_name`, `birth_date`, `fav_coin`, `avatar`, `status`, `role`) VALUES
-(0, 0, 'admin@cryptodomain.com', '21232f297a57a5a743894a0e4a801fc3', 'El', 'Admin', '2023-02-01', 'BTC', '', 1, 1),
-(7, 7, 'asdasd@pepe.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Albert', 'Pepe', '2022-12-01', 'ETH', '', 1, 0),
+(0, 0, 'admin@cryptodomain.com', '21232f297a57a5a743894a0e4a801fc3', 'The', 'Admin', '2023-02-01', 'BTC', '', 1, 1),
 (8, 8, 'lolito@lolito.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Pepita', 'Fdezsssss', '2022-09-17', 'LUN', '', 1, 0),
 (9, 9, 'lolito@lolito.com', 'e10adc3949ba59abbe56e057f20f883e', 'Lolito', 'Fdez', '2022-09-17', 'DOGE', '', 1, 0),
 (10, 10, 'dayan@dayan.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Dayansssssssssss', 'Guay', '2023-02-23', 'DOGE', '', 1, 0),
@@ -101,11 +116,11 @@ CREATE TABLE `wallet` (
 --
 
 INSERT INTO `wallet` (`id_wallet`, `id_user`, `json_coins`) VALUES
-(0, 0, '{\"EUR\": 1, \"BTC\": 10000, \"ETH\": 15000, \"LUN\": 30000, \"DOGE\": 40000}'),
-(8, 8, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
+(0, 0, '{\"EUR\": 1, \"BTC\": 10001, \"ETH\": 15000, \"LUN\": 30000, \"DOGE\": 40000}'),
+(8, 8, '{\"EUR\": 0, \"BTC\": 1.1, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
 (9, 9, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
 (10, 10, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
-(11, 11, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
+(11, 11, '{\"EUR\": 100340, \"BTC\": 95.9, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}'),
 (12, 12, '{\"EUR\": 0, \"BTC\": 0, \"ETH\": 0, \"LUN\": 0, \"DOGE\": 0}');
 
 --
@@ -150,7 +165,7 @@ ALTER TABLE `coins`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id_trans` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_trans` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -7,7 +7,7 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 <h1 class="mb-10 text-center text-2xl font-bold">Transfer to your panas</h1>
 <!-- select coin -->
 <div class="w-80 max-w-2xl mx-auto">
-<form action="<?php echo BASE_URL .'/src/funcs/transferUser.php';?>" id="formSell">
+<form method='post' action="<?php echo BASE_URL .'/src/funcs/transferUser.php';?>" id="formSell">
 	<label for="coins" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select the coin for sell</label>
     <select id="coins" name="coin" class="bg-yellow border border-maroon text-gray-900 text-sm rounded-lg focus:ring-purple focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-purple dark:placeholder-gray-400 dark:text-purple dark:focus:ring-purple dark:focus:border-purple">
       <option disabled selected>Choose from your wallet</option>
@@ -20,7 +20,7 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
 <!-- select quantity money -->
 <div class="max-w-2xl mx-auto">
   <p class="ml-4 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">How much do you want to transfer?</p>
-    	<input class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" name="amount" placeholder="100BTC" min='0' id="amount" type="number" required/>
+    	<input class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" step='any' name="amount" placeholder="100BTC" min='0' id="amount" type="number" required/>
       <br>
         <span id='quantityWallet'></span>
 </div>
@@ -28,7 +28,17 @@ include BASE_PATH.'/src/templates/components/navbarLoggedUser.php';
   <p class="ml-4 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Who is the receiver?</p>
     	<input class="w-80 h-11 p-4 mr-0 border rounded-lg text-gray-800 border-purple bg-white" name="reciever" id='emailUser' placeholder="admin@gmail.com" type="email" required/>
 </div>
-<p id='msgError' class="text-red text-center"></p>
+<p id='msgError' class="text-red text-center">
+<?php
+         if(isset($_GET['msgError'])){
+          switch($_GET['msgError']){
+              case 'user':
+                  echo 'This user doesnt exist.';
+                  break;
+              } 
+        }
+        ?>
+</p>
 <!-- resumen -->
     <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
       <div class="rounded-lg">

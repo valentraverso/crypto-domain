@@ -11,11 +11,13 @@
 			</button>
 		</div>
 		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-			<li><a class="text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL; ?>">Home</a></li>
+			<li><a class="transition text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL; ?>">Home</a></li>
+
+			<li><a class="transition text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL.'/user/transfer-user.php'; ?>">Transfer</a></li>
 			
-			<li><a class="text-sm text-maroon font-bold hover:text-maroon" href="<?php echo BASE_URL.'/user/buy-coins.php'; ?>">Buy</a></li>
+			<li><a class="transition text-sm text-maroon font-bold hover:text-maroon" href="<?php echo BASE_URL.'/user/buy-coins.php'; ?>">Buy</a></li>
 			
-			<li><a class="text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL.'/user/sell-coins.php'; ?>">Sell</a></li>
+			<li><a class="transition text-sm text-gray-400 hover:text-maroon" href="<?php echo BASE_URL.'/user/sell-coins.php'; ?>">Sell</a></li>
 		</ul>
 		<div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
       		<ul class="flex flex-col p-4 mt-4 rounded">
@@ -57,6 +59,9 @@
 				<ul>
 					<li class="mb-1">
 						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL; ?>">Home</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL.'/user/transfer-user.php'; ?>">Transfer</a>
 					</li>
 					<li class="mb-1">
 						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-yellow hover:text-maroon rounded" href="<?php echo BASE_URL.'/user/buy-coins.php'; ?>">Buy</a>
