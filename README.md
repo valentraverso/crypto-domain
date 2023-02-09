@@ -1,5 +1,5 @@
 `#html` `#CSS` `#PHP` `#Javascript` `#JSON` `#API` `#MySQL` `#Xampp` `#TailWind` `#ChartJS` `#FlowBite` `#Crypto`
-# ｛Crypto Domain SSL｝💸💶
+# ｛Crypto Domain SSL｝💸 💶
 
 The fastest way to buy, sell and transfer criptocoins in the Web 3.0!
 
@@ -61,12 +61,11 @@ Here you can buy all the different crypto coins with your funds. There's validat
 Here you can sell to the "Admin" all the different crypto currencies you have and funds are added directly into your account.<br><br>
 <img src="img/readme/sellPage.png"><br><br>
 - TRANSFER <br><br>
-In this page you can transfer any cryto currency to any user in the website. 
+In this page you can transfer any cryto currency to any user in the website. <br><br>
 <img src="img/readme/transferPage.png"><br><br>
 - ADMIN <br><br>
-This is the page where the admin lives. He can see all wallets, deativate users, total balance of the admin wallet as well as all user details.
+This is the page where the admin lives. He can see all wallets, deativate users, total balance of the admin wallet as well as all user details.<br><br>
 <img src="img/readme/adminPage.png">
-<br>
 <br>
 
 ### Technologies used 🧑‍💻👨‍💻
