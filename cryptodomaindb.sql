@@ -21,8 +21,10 @@ SET time_zone = "+00:00";
 -- Database: `cryptodomaindb`
 --
 
-CREATE DATABASE cryptodomaindb;
-use cryptodomaindb;
+-- CREATE DATABASE cryptodomaindb;
+-- use cryptodomaindb;
+
+use id20279702_cryptodomain;
 
 -- --------------------------------------------------------
 
